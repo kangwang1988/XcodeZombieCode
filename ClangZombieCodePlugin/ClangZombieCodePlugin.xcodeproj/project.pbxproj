@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		293BFCC21DC104DF003FAEF0 /* ClangZombieCodePlugin.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 293BFCC11DC104DF003FAEF0 /* ClangZombieCodePlugin.hpp */; };
+		293BFCC41DC104DF003FAEF0 /* ClangZombieCodePluginPriv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 293BFCC31DC104DF003FAEF0 /* ClangZombieCodePluginPriv.hpp */; };
+		293BFCC61DC104DF003FAEF0 /* ClangZombieCodePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293BFCC51DC104DF003FAEF0 /* ClangZombieCodePlugin.cpp */; };
+		293BFCF21DC105B0003FAEF0 /* json.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 293BFCEF1DC105B0003FAEF0 /* json.hpp */; };
+		293BFCF31DC105B0003FAEF0 /* ZombieCodeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293BFCF01DC105B0003FAEF0 /* ZombieCodeUtil.cpp */; };
+		293BFCF41DC105B0003FAEF0 /* ZombieCodeUtil.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 293BFCF11DC105B0003FAEF0 /* ZombieCodeUtil.hpp */; };
+		293BFCF71DC10749003FAEF0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 293BFCF61DC10749003FAEF0 /* libz.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		293BFCBE1DC104DF003FAEF0 /* libClangZombieCodePlugin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libClangZombieCodePlugin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		293BFCC11DC104DF003FAEF0 /* ClangZombieCodePlugin.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClangZombieCodePlugin.hpp; sourceTree = "<group>"; };
+		293BFCC31DC104DF003FAEF0 /* ClangZombieCodePluginPriv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClangZombieCodePluginPriv.hpp; sourceTree = "<group>"; };
+		293BFCC51DC104DF003FAEF0 /* ClangZombieCodePlugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClangZombieCodePlugin.cpp; sourceTree = "<group>"; };
+		293BFCEF1DC105B0003FAEF0 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
+		293BFCF01DC105B0003FAEF0 /* ZombieCodeUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZombieCodeUtil.cpp; sourceTree = "<group>"; };
+		293BFCF11DC105B0003FAEF0 /* ZombieCodeUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZombieCodeUtil.hpp; sourceTree = "<group>"; };
+		293BFCF61DC10749003FAEF0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		293BFCBB1DC104DF003FAEF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293BFCF71DC10749003FAEF0 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		293BFCB51DC104DF003FAEF0 = {
+			isa = PBXGroup;
+			children = (
+				293BFCC01DC104DF003FAEF0 /* ClangZombieCodePlugin */,
+				293BFCBF1DC104DF003FAEF0 /* Products */,
+				293BFCF51DC10749003FAEF0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		293BFCBF1DC104DF003FAEF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				293BFCBE1DC104DF003FAEF0 /* libClangZombieCodePlugin.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		293BFCC01DC104DF003FAEF0 /* ClangZombieCodePlugin */ = {
+			isa = PBXGroup;
+			children = (
+				293BFCEF1DC105B0003FAEF0 /* json.hpp */,
+				293BFCF01DC105B0003FAEF0 /* ZombieCodeUtil.cpp */,
+				293BFCF11DC105B0003FAEF0 /* ZombieCodeUtil.hpp */,
+				293BFCC11DC104DF003FAEF0 /* ClangZombieCodePlugin.hpp */,
+				293BFCC31DC104DF003FAEF0 /* ClangZombieCodePluginPriv.hpp */,
+				293BFCC51DC104DF003FAEF0 /* ClangZombieCodePlugin.cpp */,
+			);
+			path = ClangZombieCodePlugin;
+			sourceTree = "<group>";
+		};
+		293BFCF51DC10749003FAEF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				293BFCF61DC10749003FAEF0 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		293BFCBC1DC104DF003FAEF0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293BFCF21DC105B0003FAEF0 /* json.hpp in Headers */,
+				293BFCC21DC104DF003FAEF0 /* ClangZombieCodePlugin.hpp in Headers */,
+				293BFCC41DC104DF003FAEF0 /* ClangZombieCodePluginPriv.hpp in Headers */,
+				293BFCF41DC105B0003FAEF0 /* ZombieCodeUtil.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		293BFCBD1DC104DF003FAEF0 /* ClangZombieCodePlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 293BFCC91DC104DF003FAEF0 /* Build configuration list for PBXNativeTarget "ClangZombieCodePlugin" */;
+			buildPhases = (
+				293BFCBA1DC104DF003FAEF0 /* Sources */,
+				293BFCBB1DC104DF003FAEF0 /* Frameworks */,
+				293BFCBC1DC104DF003FAEF0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClangZombieCodePlugin;
+			productName = ClangZombieCodePlugin;
+			productReference = 293BFCBE1DC104DF003FAEF0 /* libClangZombieCodePlugin.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		293BFCB61DC104DF003FAEF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = KyleWong;
+				TargetAttributes = {
+					293BFCBD1DC104DF003FAEF0 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VP3AM7E5ZL;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 293BFCB91DC104DF003FAEF0 /* Build configuration list for PBXProject "ClangZombieCodePlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 293BFCB51DC104DF003FAEF0;
+			productRefGroup = 293BFCBF1DC104DF003FAEF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				293BFCBD1DC104DF003FAEF0 /* ClangZombieCodePlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		293BFCBA1DC104DF003FAEF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293BFCF31DC105B0003FAEF0 /* ZombieCodeUtil.cpp in Sources */,
+				293BFCC61DC104DF003FAEF0 /* ClangZombieCodePlugin.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		293BFCC71DC104DF003FAEF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		293BFCC81DC104DF003FAEF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		293BFCCA1DC104DF003FAEF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = /opt/llvm/clangplugin;
+				DEVELOPMENT_TEAM = VP3AM7E5ZL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/opt/llvm/llvm/include,
+					/opt/llvm/llvm/tools/clang/include,
+					/opt/llvm/llvm_build/include,
+					/opt/llvm/llvm_build/tools/clang/include,
+				);
+				LIBRARY_SEARCH_PATHS = /opt/llvm/llvm_build/lib;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-fno-common",
+					"-Woverloaded-virtual",
+					"-Wcast-qual",
+					"-fno-strict-aliasing",
+					"-pedantic",
+					"-Wno-long-long",
+					"-Wall",
+					"-Wno-unused-parameter",
+					"-Wwrite-strings",
+					"-fno-rtti",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"-lclang",
+					"-lclangFrontend",
+					"-lclangAST",
+					"-lclangAnalysis",
+					"-lclangBasic",
+					"-lclangCodeGen",
+					"-lclangDriver",
+					"-lclangFrontendTool",
+					"-lclangLex",
+					"-lclangParse",
+					"-lclangSema",
+					"-lclangEdit",
+					"-lclangSerialization",
+					"-lclangStaticAnalyzerCheckers",
+					"-lclangStaticAnalyzerCore",
+					"-lclangStaticAnalyzerFrontend",
+					"-lLLVMX86CodeGen",
+					"-lLLVMX86AsmParser",
+					"-lLLVMX86Disassembler",
+					"-lLLVMExecutionEngine",
+					"-lLLVMAsmPrinter",
+					"-lLLVMSelectionDAG",
+					"-lLLVMX86AsmPrinter",
+					"-lLLVMX86Info",
+					"-lLLVMMCParser",
+					"-lLLVMCodeGen",
+					"-lLLVMX86Utils",
+					"-lLLVMScalarOpts",
+					"-lLLVMInstCombine",
+					"-lLLVMTransformUtils",
+					"-lLLVMAnalysis",
+					"-lLLVMTarget",
+					"-lLLVMCore",
+					"-lLLVMMC",
+					"-lLLVMSupport",
+					"-lLLVMBitReader",
+					"-lLLVMOption",
+					"-lLLVMProfileData",
+					"-lpthread",
+					"-lcurses",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		293BFCCB1DC104DF003FAEF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = /opt/llvm/clangplugin;
+				DEVELOPMENT_TEAM = VP3AM7E5ZL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/opt/llvm/llvm/include,
+					/opt/llvm/llvm/tools/clang/include,
+					/opt/llvm/llvm_build/include,
+					/opt/llvm/llvm_build/tools/clang/include,
+				);
+				LIBRARY_SEARCH_PATHS = /opt/llvm/llvm_build/lib;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-fno-common",
+					"-Woverloaded-virtual",
+					"-Wcast-qual",
+					"-fno-strict-aliasing",
+					"-pedantic",
+					"-Wno-long-long",
+					"-Wall",
+					"-Wno-unused-parameter",
+					"-Wwrite-strings",
+					"-fno-rtti",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"-lclang",
+					"-lclangFrontend",
+					"-lclangAST",
+					"-lclangAnalysis",
+					"-lclangBasic",
+					"-lclangCodeGen",
+					"-lclangDriver",
+					"-lclangFrontendTool",
+					"-lclangLex",
+					"-lclangParse",
+					"-lclangSema",
+					"-lclangEdit",
+					"-lclangSerialization",
+					"-lclangStaticAnalyzerCheckers",
+					"-lclangStaticAnalyzerCore",
+					"-lclangStaticAnalyzerFrontend",
+					"-lLLVMX86CodeGen",
+					"-lLLVMX86AsmParser",
+					"-lLLVMX86Disassembler",
+					"-lLLVMExecutionEngine",
+					"-lLLVMAsmPrinter",
+					"-lLLVMSelectionDAG",
+					"-lLLVMX86AsmPrinter",
+					"-lLLVMX86Info",
+					"-lLLVMMCParser",
+					"-lLLVMCodeGen",
+					"-lLLVMX86Utils",
+					"-lLLVMScalarOpts",
+					"-lLLVMInstCombine",
+					"-lLLVMTransformUtils",
+					"-lLLVMAnalysis",
+					"-lLLVMTarget",
+					"-lLLVMCore",
+					"-lLLVMMC",
+					"-lLLVMSupport",
+					"-lLLVMBitReader",
+					"-lLLVMOption",
+					"-lLLVMProfileData",
+					"-lpthread",
+					"-lcurses",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		293BFCB91DC104DF003FAEF0 /* Build configuration list for PBXProject "ClangZombieCodePlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				293BFCC71DC104DF003FAEF0 /* Debug */,
+				293BFCC81DC104DF003FAEF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		293BFCC91DC104DF003FAEF0 /* Build configuration list for PBXNativeTarget "ClangZombieCodePlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				293BFCCA1DC104DF003FAEF0 /* Debug */,
+				293BFCCB1DC104DF003FAEF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 293BFCB61DC104DF003FAEF0 /* Project object */;
+}
