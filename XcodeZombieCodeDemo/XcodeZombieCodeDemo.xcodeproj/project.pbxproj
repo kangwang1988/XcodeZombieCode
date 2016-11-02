@@ -291,7 +291,7 @@
 					"-Xclang",
 					"-plugin-arg-ClangZombieCodePlugin",
 					"-Xclang",
-					/Users/kylewong/Documents/Codes/XcodeZombieCode,
+					$SRCROOT/..,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kangwang1988.XcodeZombieCodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -322,7 +322,7 @@
 					"-Xclang",
 					"-plugin-arg-ClangZombieCodePlugin",
 					"-Xclang",
-					/Users/kylewong/Documents/Codes/XcodeZombieCode,
+					$SRCROOT/..,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kangwang1988.XcodeZombieCodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

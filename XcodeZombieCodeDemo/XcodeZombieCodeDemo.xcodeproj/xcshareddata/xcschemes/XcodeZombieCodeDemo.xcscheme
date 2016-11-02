@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "/bin/sh /Users/kylewong/Documents/Codes/XcodeZombieCode/Analyzer/preBuild.sh"
+               scriptText = "/bin/sh $SRCROOT/../Analyzer/preBuild.sh"
                shellToInvoke = "/bin/sh">
                <EnvironmentBuildable>
                   <BuildableReference
@@ -29,7 +29,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "/bin/sh /Users/kylewong/Documents/Codes/XcodeZombieCode/Analyzer/postBuild.sh"
+               scriptText = "/bin/sh $SRCROOT/../Analyzer/postBuild.sh"
                shellToInvoke = "/bin/sh">
                <EnvironmentBuildable>
                   <BuildableReference

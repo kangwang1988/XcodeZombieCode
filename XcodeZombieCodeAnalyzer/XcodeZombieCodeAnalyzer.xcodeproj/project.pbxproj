@@ -221,7 +221,7 @@
 		293BFD1E1DC10854003FAEF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = /Users/kylewong/Documents/Codes/XcodeZombieCode/Analyzer;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/../Analyzer;
 				DEVELOPMENT_TEAM = VP3AM7E5ZL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -230,7 +230,7 @@
 		293BFD1F1DC10854003FAEF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = /Users/kylewong/Documents/Codes/XcodeZombieCode/Analyzer;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/../Analyzer;
 				DEVELOPMENT_TEAM = VP3AM7E5ZL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

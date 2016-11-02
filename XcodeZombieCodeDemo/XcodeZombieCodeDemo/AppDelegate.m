@@ -34,8 +34,8 @@
              name:kNotificationViewControllerDidLoad
            object:nil];
   [[ViewController alloc]
-      initWithRootViewControllerURL:@"SCHEME://XXLoginViewController"];
-  //  [[ViewController alloc] openURL:@"SCHEME://XXHomeViewController"];
+      initWithRootViewControllerURL:@"XXXX://LoginViewController"];
+  //  [[ViewController alloc] openURL:@"XXXX://HomeViewController"];
   [[NoMethodUsedClass alloc] init];
   return YES;
 }

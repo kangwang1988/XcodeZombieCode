@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/kylewong/Documents/Codes/XcodeZombieCode/Analyzer AppDelegate"
+            argument = "$SRCROOT/../Analyzer AppDelegate"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

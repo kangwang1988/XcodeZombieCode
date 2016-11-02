@@ -459,7 +459,8 @@ namespace ZombieCode
     bool ZombieCodeASTAction::ParseArgs(const CompilerInstance &CI, const std::vector<std::string>& args) {
         size_t cnt = args.size();
         if(cnt == 1){
-            gSrcRootPath = args.at(0);
+            string relativePath = args.at(0);
+            gSrcRootPath =  absolutePathFromRelative(relativePath);
         }
         return true;
     }
