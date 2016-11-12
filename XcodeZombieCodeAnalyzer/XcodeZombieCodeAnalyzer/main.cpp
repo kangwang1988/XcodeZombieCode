@@ -14,6 +14,8 @@
 using namespace std;
 using namespace nlohmann;
 
+void appendUsedClsMethodCall(string clsMethod,string callerClsMethod,json &clsMethodJson,json &clsInterfHierachyJson,json &clsWithAnySrcCodeJson,json &usedClsMethodJson,json &unusedClsMethodJson);
+
 string kKeyInterfSelDictFilename = "filename";
 string kKeyInterfSelDictSourceCode = "sourceCode";
 string kKeyInterfSelDictRange = "range";
@@ -151,6 +153,14 @@ json implicitCallStackJson = {
     {"-[NSObject dictionaryWithValuesForKeys:]","+[NSObject alloc]"},
     {"+[NSObject load]","+[NSObject alloc]"},
     {"+[NSObject initialize]","+[NSObject alloc]"},
+    {"-[NSOperation start]","+[NSOperation alloc]"},
+    {"-[NSOperation main]","+[NSOperation alloc]"},
+    {"-[NSOperation resume]","+[NSOperation alloc]"},
+    {"-[NSOperation finish]","+[NSOperation alloc]"},
+    {"-[NSOperation isCancelled]","+[NSOperation alloc]"},
+    {"-[NSOperation isFinished]","+[NSOperation alloc]"},
+    {"-[NSOperation isReady]","+[NSOperation alloc]"},
+    {"-[NSOperation isPaused]","+[NSOperation alloc]"}
 };
 
 typedef enum{
@@ -401,17 +411,28 @@ json abbrClsMethodsJsonFromClsMethodJson(json &clsMethodJson){
     return abbrClsMethods;
 }
 
-void appendClsAllocMethod(string clsName,string callerClsMethod,json &clsInterfHierachyJson,json &usedClsMethodJson,json &unusedClsMethodJson){
+void appendUsedClsMethodCallees(string clsMethod,json &clsMethodJson,json &clsInterfHierachyJson, json &clsWithAnySrcCodeJson,json &usedClsMethodJson,json &unusedClsMethodJson){
+    json callees = json(json(clsMethodJson[clsMethod])[kKeyInterfSelDictCallees]);
+    for(json::iterator it = callees.begin();it!=callees.end();it++){
+        string calleeClsMethod = it.value();
+        string clsCallee = getClsMethodToken(calleeClsMethod, ClsMethodTokenClass);
+        appendUsedClsMethodCall(calleeClsMethod, clsMethod,clsMethodJson,clsInterfHierachyJson, clsWithAnySrcCodeJson,usedClsMethodJson,unusedClsMethodJson);
+    }
+}
+
+void appendClsAllocMethod(string clsName,string callerClsMethod,json &clsMethodJson,json &clsInterfHierachyJson,json &clsWithAnySrcCodeJson,json &usedClsMethodJson,json &unusedClsMethodJson){
     while(clsName.length() && clsName.compare("NSObject")){
         string clsAllocKey = string("+[")+clsName+" alloc]";
-        if(usedClsMethodJson.find(clsAllocKey)==usedClsMethodJson.end())
+        if(usedClsMethodJson.find(clsAllocKey)==usedClsMethodJson.end()){
             usedClsMethodJson[clsAllocKey]=callerClsMethod;
+            appendUsedClsMethodCallees(clsAllocKey,clsMethodJson, clsInterfHierachyJson, clsWithAnySrcCodeJson,usedClsMethodJson, unusedClsMethodJson);
+        }
         json supClassJson = json(json(clsInterfHierachyJson[clsName])[kKeyInterfSelDictSuperClass]);
         clsName = supClassJson.is_string()?supClassJson.get<string>():"";
     }
 }
 
-void appendUsedClsMethodCall(string clsMethod,string callerClsMethod,json &usedClsMethodJson,json &unusedClsMethodJson,json &clsMethodJson,json &clsInterfHierachyJson,json &clsWithAnySrcCodeJson){
+void appendUsedClsMethodCall(string clsMethod,string callerClsMethod,json &clsMethodJson,json &clsInterfHierachyJson,json &clsWithAnySrcCodeJson,json &usedClsMethodJson,json &unusedClsMethodJson){
     string clsMethodType = getClsMethodToken(clsMethod, ClsMethodTokenMethodType);
     string clsName = getClsMethodToken(clsMethod, ClsMethodTokenClass);
     string clsMethodSel = getClsMethodToken(clsMethod, ClsMethodTokenSel);
@@ -423,7 +444,7 @@ void appendUsedClsMethodCall(string clsMethod,string callerClsMethod,json &usedC
     if(usedClsMethodJson.find(clsMethod)!=usedClsMethodJson.end())
         return;
     if(!clsMethodType.compare("+") && !clsMethodSel.compare("alloc")){
-        appendClsAllocMethod(clsName, callerClsMethod, clsInterfHierachyJson,usedClsMethodJson, unusedClsMethodJson);
+        appendClsAllocMethod(clsName, callerClsMethod,clsMethodJson,clsInterfHierachyJson,clsWithAnySrcCodeJson,usedClsMethodJson, unusedClsMethodJson);
     }
     string exactClsMethod;
     if(clsMethodJson.find(clsMethod)!=clsMethodJson.end() || find(clsInterfsVec.begin(),clsInterfsVec.end(),clsMethod)!=clsInterfsVec.end()){
@@ -451,21 +472,18 @@ void appendUsedClsMethodCall(string clsMethod,string callerClsMethod,json &usedC
         clsMethodType = getClsMethodToken(exactClsMethod, ClsMethodTokenMethodType);
         clsName = getClsMethodToken(exactClsMethod, ClsMethodTokenClass);
         clsMethodSel = getClsMethodToken(exactClsMethod, ClsMethodTokenSel);
-        appendClsAllocMethod(clsName, callerClsMethod, clsInterfHierachyJson,usedClsMethodJson, unusedClsMethodJson);
+        appendClsAllocMethod(clsName, callerClsMethod,clsMethodJson,clsInterfHierachyJson,clsWithAnySrcCodeJson,usedClsMethodJson, unusedClsMethodJson);
         string clsAllocKey = joinedClsMethod(!clsMethodType.compare("-"), clsName, "alloc");
-        if(!clsMethodType.compare("-") && usedClsMethodJson.find(clsAllocKey)==usedClsMethodJson.end())
+        if(!clsMethodType.compare("-") && usedClsMethodJson.find(clsAllocKey)==usedClsMethodJson.end()){
             usedClsMethodJson[clsAllocKey]=callerClsMethod;
+            appendUsedClsMethodCallees(clsAllocKey,clsMethodJson, clsInterfHierachyJson, clsWithAnySrcCodeJson,usedClsMethodJson, unusedClsMethodJson);
+        }
         if(unusedClsMethodJson.find(exactClsMethod)!=unusedClsMethodJson.end())
             unusedClsMethodJson.erase(exactClsMethod);
     }
     else
         return;
-    json callees = json(json(clsMethodJson[exactClsMethod])[kKeyInterfSelDictCallees]);
-    for(json::iterator it = callees.begin();it!=callees.end();it++){
-        string calleeClsMethod = it.value();
-        string clsCallee = getClsMethodToken(calleeClsMethod, ClsMethodTokenClass);
-        appendUsedClsMethodCall(calleeClsMethod, exactClsMethod, usedClsMethodJson,unusedClsMethodJson, clsMethodJson,clsInterfHierachyJson, clsWithAnySrcCodeJson);
-    }
+    appendUsedClsMethodCallees(exactClsMethod,clsMethodJson,clsInterfHierachyJson,clsWithAnySrcCodeJson,usedClsMethodJson,unusedClsMethodJson);
 }
 
 json analyzeRepeatCodeOfClsMethodJson(json &clsMethodJson){
@@ -476,7 +494,10 @@ json analyzeRepeatCodeOfClsMethodJson(json &clsMethodJson){
         string clsMethod = it.key();
         json clsMethodInfoJson = it.value();
         if(clsMethodInfoJson.find(kKeyInterfSelDictSourceCode)==clsMethodInfoJson.end()){
-            it = clsMethodJson.erase(it);
+            if(clsMethodInfoJson.find(kKeyInterfSelDictCallees)==clsMethodInfoJson.end())
+                it = clsMethodJson.erase(it);
+            else
+                it++;
             continue;
         }
         string clsMethodSrcCode = clsMethodInfoJson[kKeyInterfSelDictSourceCode];
@@ -678,6 +699,7 @@ int main(int argc,char *argv[]){
     json usedClsMethodJson = {{appDelegateAlloc,"-[UIApplication main]"},{"-[UIApplication main]","-[UIApplication main]"},
         {"+[NSObject alloc]","-[UIApplication main]"},
     };
+    
     bool findAny = false;
     do{
         findAny = false;
@@ -704,7 +726,7 @@ int main(int argc,char *argv[]){
             it++;
         }
         if(findAny){
-            appendUsedClsMethodCall(clsMethod, callerClsMethod, usedClsMethodJson,unusedClsMethodJson, clsMethodJson,clsInterfHierachyJson,clsWithAnySrcCodeJson);
+            appendUsedClsMethodCall(clsMethod, callerClsMethod,clsMethodJson,clsInterfHierachyJson,clsWithAnySrcCodeJson,usedClsMethodJson,unusedClsMethodJson);
             cout<<"[KWLM]Append Count Remains:"<<unusedClsMethodJson.size()<<endl;
         }
     }while(findAny);

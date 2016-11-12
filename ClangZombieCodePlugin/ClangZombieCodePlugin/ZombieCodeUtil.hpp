@@ -95,6 +95,7 @@ public:
     static void appendObjcAddNotificationCall(bool isInstanceMethod,string cls,string selector,bool calleeIsInstanceMethod,string calleeCls,string calleeSel,string notif);
     static void appendObjcPostNotificationCall(bool isInstanceMethod, string cls, string selector, string notif);
     static void appendObjcProtoInterfCall(bool isInstanceMethod,string cls,string selector,string proto,string protoSel);
+    static void appendOpenUrl(string url);
     static bool writeJsonToFile(json j,string filename);
     static void synchronize();
 };

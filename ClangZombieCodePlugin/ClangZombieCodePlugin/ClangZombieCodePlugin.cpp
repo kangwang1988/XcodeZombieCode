@@ -102,6 +102,17 @@ namespace ZombieCode
                         stringStream<<methodBody->getSourceRange().getBegin().getRawEncoding()<<"-"<<methodBody->getSourceRange().getEnd().getRawEncoding();
                         objcMethodRange = stringStream.str();
                         ZombieCodeUtil::appendObjcClsMethodImpl(objcIsInstanceMethod, objcClsImpl, objcSelector, objcMethodFilename, methodBody->getSourceRange().getBegin().getRawEncoding(),methodBody->getSourceRange().getEnd().getRawEncoding(), objcMethodSrcCode);
+                        LangOptions LangOpts;
+                        LangOpts.ObjC2 = true;
+                        PrintingPolicy Policy(LangOpts);
+                        string sMethod;
+                        raw_string_ostream paramMethod(sMethod);
+                        methodDecl->print(paramMethod, Policy);
+                        sMethod = paramMethod.str();
+                        if(sMethod.find("__attribute__((ibaction))")!=string::npos)
+                        {
+                            ZombieCodeUtil::appendObjcMethodImplCall(false, objcClsImpl, "alloc",objcIsInstanceMethod, objcClsImpl,objcSelector);
+                        }
                     }
                 }
             }
@@ -308,6 +319,27 @@ namespace ZombieCode
                 if(has_suffix(classExpr,"class]")){
                     classExpr = classExpr.substr(1,classExpr.length()-string("class]").length()-1);
                     ZombieCodeUtil::appendObjcMethodImplCall(objcIsInstanceMethod, objcClsImpl, objcSelector,false, classExpr,"alloc");
+                }
+            }
+            //URLManager Support
+            else if(!calleeSel.compare("initWithRootViewControllerURL:") ||
+                    !calleeSel.compare("initWithRootViewControllerURL:withQuery:") ||
+                    !calleeSel.compare("openURL:") ||
+                    !calleeSel.compare("openURL:withQuery:") ||
+                    !calleeSel.compare("openURL:withQuery:animated:") ||
+                    !calleeSel.compare("openURL:isPushForward:withQuery:animated") ||
+                    !calleeSel.compare("viewControllerForURL:withQuery:")){
+                string s0;
+                raw_string_ostream param0(s0);
+                objcExpr->getArg(0)->printPretty(param0, 0, Policy);
+                string paramType0 = objcExpr->getArg(0)->getType().getAsString();
+                string param0Url = param0.str();
+                string openUrlPrefix = "@\"PREF://";
+                if(param0Url.find(openUrlPrefix)==0){
+                    string vc4Url = param0Url.substr(openUrlPrefix.length(),param0Url.length()-openUrlPrefix.length()-1);
+                    ZombieCodeUtil::appendOpenUrl(vc4Url);
+                    ZombieCodeUtil::appendObjcMethodImplCall(objcIsInstanceMethod, objcClsImpl, objcSelector, false, vc4Url, "alloc");
+                    ZombieCodeUtil::appendObjcMethodImplCall(objcIsInstanceMethod, objcClsImpl, objcSelector, true, vc4Url, "init");
                 }
             }
             if(objcMethodFilename.length() && isCallOriginalMethod){

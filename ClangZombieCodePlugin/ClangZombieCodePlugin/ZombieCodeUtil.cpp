@@ -25,6 +25,7 @@ json protoInterfHierachy;
 json clsMethodAddNotifsJson;
 json notifPostedCallersJson;
 json protoInterfCallJson;
+json openUrlJson;
 string filename;
 
 void ZombieCodeUtil::setFilename(string fname,bool forceSet){
@@ -161,6 +162,13 @@ void ZombieCodeUtil::appendObjcProtoInterfCall(bool isInstanceMethod, string cls
     protoInterfCallJson[key]=protoInterfJson;
 }
 
+void ZombieCodeUtil::appendOpenUrl(string url){
+    vector<string> urlVec = openUrlJson.is_array()?openUrlJson.get<vector<string>>():vector<string>();
+    if(find(urlVec.begin(),urlVec.end(),url)==urlVec.end()){
+        openUrlJson.push_back(url);
+    }
+}
+
 void ZombieCodeUtil::synchronize(){
     string fileprefix = string(filename);
     if(!fileprefix.length()){
@@ -176,4 +184,5 @@ void ZombieCodeUtil::synchronize(){
     writeJsonToFile(clsMethodAddNotifsJson,gSrcRootPath+"/Analyzer/"+fileprefix+".clsMethodAddNotifs.jsonpart");
     writeJsonToFile(notifPostedCallersJson, gSrcRootPath+"/Analyzer/"+fileprefix+".notifPostedCallers.jsonpart");
     writeJsonToFile(protoInterfCallJson, gSrcRootPath+"/Analyzer/"+fileprefix+".protoInterfCall.jsonpart");
+    writeJsonToFile(openUrlJson, gSrcRootPath+"/Analyzer/"+fileprefix+".openUrlJson.jsonpart");
 }
