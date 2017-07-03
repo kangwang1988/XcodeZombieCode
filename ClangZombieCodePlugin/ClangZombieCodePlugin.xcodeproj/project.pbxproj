@@ -319,6 +319,7 @@
 					"-lLLVMProfileData",
 					"-lpthread",
 					"-lcurses",
+					"-lLLVMDemangle",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -399,6 +400,7 @@
 					"-lLLVMProfileData",
 					"-lpthread",
 					"-lcurses",
+					"-lLLVMDemangle",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -423,6 +425,7 @@
 				293BFCCB1DC104DF003FAEF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
