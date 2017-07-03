@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ClangZombieCodePlugin/ClangZombieCodePlugin.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:XcodeZombieCodeDemo/XcodeZombieCodeDemo.xcodeproj">
    </FileRef>
    <FileRef

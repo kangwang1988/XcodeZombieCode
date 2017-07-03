@@ -8,22 +8,32 @@
 #include <vector>
 #include <fstream>
 #include <iterator>
+#include <regex>
+#include "clang/Tooling/CommonOptionsParser.h"
+#include "clang/tooling/Tooling.h"
+#include "llvm/support/CommandLine.h"
 #include "json.hpp"
 #include "ZombieCodeUtil.hpp"
+#include "ClangZombieCodePlugin.hpp"
 
 using namespace std;
 using namespace nlohmann;
+using namespace clang::tooling;
+using llvm::cl::OptionCategory;
+using namespace ZombieCode;
+
+extern vector<string> getSourcesByProject(string prjPath);
 
 void appendUsedClsMethodCall(string clsMethod,string callerClsMethod,json &clsMethodJson,json &clsInterfHierachyJson,json &clsWithAnySrcCodeJson,json &usedClsMethodJson,json &unusedClsMethodJson);
 
-string kKeyInterfSelDictFilename = "filename";
-string kKeyInterfSelDictSourceCode = "sourceCode";
-string kKeyInterfSelDictRange = "range";
-string kKeyInterfSelDictCallees = "callee";
-string kKeyInterfSelDictSuperClass = "superClass";
-string kKeyInterfSelDictProtos = "protos";
-string kKeyInterfSelDictInterfs = "interfs";
-string kKeyInterfSelDictIsInSrcDir = "isInSrcDir";
+extern string kKeyInterfSelDictFilename;
+extern string kKeyInterfSelDictSourceCode;
+extern string kKeyInterfSelDictRange;
+extern string kKeyInterfSelDictCallees;
+extern string kKeyInterfSelDictSuperClass;
+extern string kKeyInterfSelDictProtos;
+extern string kKeyInterfSelDictInterfs;
+extern string kKeyInterfSelDictIsInSrcDir;
 string kKeyInterfSelDictNotifCallers = "notifCallers";
 
 json implicitCallStackJson = {
@@ -222,17 +232,6 @@ string exec(const char* cmd) {
             result += buffer;
     }
     return result;
-}
-
-vector<string> split(const string &s, char delim) {
-    vector<string> elems;
-    stringstream ss;
-    ss.str(s);
-    string item;
-    while (getline(ss, item, delim)) {
-        elems.push_back(item);
-    }
-    return elems;
 }
 
 json readJsonFromFile(const string& file){
@@ -654,13 +653,69 @@ string searchUsedCallerByNotification(string& clsMethod,json& clsMethodAddNotifs
     return "";
 }
 
+int generateJsonWithLibTooling(int argc,char *argv[]){
+    OptionCategory oc("","");
+    const char **pargv = const_cast<const char **>(argv);
+    CommonOptionsParser op(argc,pargv,oc);
+    // create a new Clang Tool instance (a LibTooling environment)
+    string wspprjFile = op.getSourcePathList().at(0);
+    size_t npos = wspprjFile.rfind("/");
+    if(npos==string::npos){
+        return 1;
+    }
+    string directory = wspprjFile.substr(0,npos),wspprjFilename = wspprjFile.substr(npos+1,wspprjFile.length()-npos);
+    
+    vector<string> projsVec;
+    //Parse Workspace
+    if(wspprjFilename.find(".xcworkspace") == wspprjFilename.length()-string(".xcworkspace").length()){
+        ifstream ifs(directory+"/"+wspprjFilename+"/contents.xcworkspacedata");
+        string content((istreambuf_iterator<char>(ifs)),(istreambuf_iterator<char>()    ) );
+        vector<string> lineVec = split(content,'\n');
+        
+        regex prjRegex("^[\\s]+location = \"group:[\\w\\/]+[\\.]xcodeproj\">$");
+        for(string line : lineVec){
+            smatch sm;
+            regex_match(line,sm,prjRegex);
+            for (std::smatch::iterator it = sm.begin(); it!=sm.end(); ++it) {
+                string projFile = *it;
+                string preFlagStr("group:");
+                size_t pos1 = projFile.find(preFlagStr),pos2 = projFile.find("\">");
+                if(pos1!=string::npos && pos2!=string::npos){
+                    projsVec.push_back(projFile.substr(pos1+preFlagStr.length(),pos2-pos1-preFlagStr.length()));
+                }
+            }
+        }
+    }
+    else if(wspprjFilename.find(".xcodeproj") == wspprjFilename.length()-string(".xcodeproj").length()){
+        projsVec.push_back(wspprjFilename);
+    }
+    
+    vector<string> sourceFiles;
+    //Parse Project
+    for(string projFileRelPath : projsVec){
+        string pbxprojFile = directory+"/"+projFileRelPath;
+        if(!file_exists(pbxprojFile))
+            continue;
+        vector<string> srcFilesVec = getSourcesByProject(pbxprojFile);
+        sourceFiles.insert(sourceFiles.end(),srcFilesVec.begin(),srcFilesVec.end());
+    }
+    
+    ClangTool Tool(op.getCompilations(), sourceFiles);
+    
+    // run the Clang Tool, creating a new FrontendAction (explained below)
+    std::unique_ptr<FrontendActionFactory> FrontendFactory=newFrontendActionFactory<ZombieCodeASTAction>();
+    int result = Tool.run(FrontendFactory.get());
+    return 0;
+}
 
 int main(int argc,char *argv[]){
-    if(argc!=3){
-        cout<<"Usage:"<<"postanalyze your-path-of-jsonparts-for-analyzing your-appdelegate-name"<<endl;
+    if(argc<4){
+        cout<<"Usage:"<<"postanalyze your-path-of-project parent-of-jsonparts-folder-for-analyzing your-appdelegate-name"<<endl;
         return -1;
     }
-    string folder(argv[1]);
+    gSrcRootPath =  string(argv[2]);
+    generateJsonWithLibTooling(argc,argv);
+    string folder(string(argv[2])+"/Analyzer");
     json dupClsMethodJson;
     json clsMethodJson = joinJsonPartFiles(jsonPartFiles(folder,"clsMethod.jsonpart"),dupClsMethodJson);
     writeJsonToFile(clsMethodJson,folder+"/clsMethod.json");
@@ -694,7 +749,7 @@ int main(int argc,char *argv[]){
     json clsWithAnySrcCodeJson = analyzeClsJsonWithAnySrcCode(clsMethodJson);
     writeJsonToFile(clsWithAnySrcCodeJson,folder+"/clsWithAnySrcCode.json");
     writeJsonToFile(analyzeRepeatCodeOfClsMethodJson(clsMethodJson),folder+"/repeatCode.json");
-    string appDelegateAlloc = string("+[")+argv[2]+" alloc]";
+    string appDelegateAlloc = string("+[")+argv[3]+" alloc]";
     json unusedClsMethodJson = json(clsMethodJson);
     json usedClsMethodJson = {{appDelegateAlloc,"-[UIApplication main]"},{"-[UIApplication main]","-[UIApplication main]"},
         {"+[NSObject alloc]","-[UIApplication main]"},

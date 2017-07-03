@@ -7,7 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		293BFD231DC10A55003FAEF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293BFD221DC10A55003FAEF0 /* main.cpp */; };
+		29C306381F0A3A7500A5C308 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C306371F0A3A6E00A5C308 /* libz.tbd */; };
+		29D8D5AF1F0A5FAB0030D29C /* json.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C306411F0A3B1A00A5C308 /* json.hpp */; };
+		29D8D5B01F0A5FAB0030D29C /* ZombieCodeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C306421F0A3B1A00A5C308 /* ZombieCodeUtil.cpp */; };
+		29D8D5B11F0A5FAB0030D29C /* ClangZombieCodePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C306431F0A3B1A00A5C308 /* ClangZombieCodePlugin.cpp */; };
+		29D8D5B21F0A5FAB0030D29C /* ZombieCodeUtil.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C306441F0A3B1A00A5C308 /* ZombieCodeUtil.hpp */; };
+		29D8D5B31F0A5FAB0030D29C /* ClangZombieCodePlugin.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C306451F0A3B1A00A5C308 /* ClangZombieCodePlugin.hpp */; };
+		29D8D5B41F0A5FAB0030D29C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293BFD221DC10A55003FAEF0 /* main.cpp */; };
+		29D8D5B61F0A76D00030D29C /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D8D5B51F0A76BD0030D29C /* libncurses.tbd */; };
+		29D8D5E91F0A7B7C0030D29C /* XCVersionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5BE1F0A7B560030D29C /* XCVersionGroup.m */; };
+		29D8D5EA1F0A7B7C0030D29C /* XcodeSourceTreeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5C01F0A7B560030D29C /* XcodeSourceTreeType.m */; };
+		29D8D5EB1F0A7B7C0030D29C /* XCSourceFileDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5C21F0A7B560030D29C /* XCSourceFileDefinition.m */; };
+		29D8D5EC1F0A7B7C0030D29C /* XCSubProjectDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5C31F0A7B560030D29C /* XCSubProjectDefinition.m */; };
+		29D8D5ED1F0A7B7C0030D29C /* XCProjectBuildConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5C41F0A7B560030D29C /* XCProjectBuildConfig.m */; };
+		29D8D5EE1F0A7B7C0030D29C /* XCTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5C71F0A7B560030D29C /* XCTarget.m */; };
+		29D8D5EF1F0A7B7C0030D29C /* NSString+RemoveEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5CA1F0A7B560030D29C /* NSString+RemoveEmoji.m */; };
+		29D8D5F01F0A7B7C0030D29C /* XCKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5CC1F0A7B560030D29C /* XCKeyBuilder.m */; };
+		29D8D5F11F0A7B7C0030D29C /* XcodeSourceFileType.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5CF1F0A7B560030D29C /* XcodeSourceFileType.m */; };
+		29D8D5F21F0A7B7C0030D29C /* XCXibDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5D41F0A7B560030D29C /* XCXibDefinition.m */; };
+		29D8D5F31F0A7B7C0030D29C /* XCBuildShellScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5D61F0A7B560030D29C /* XCBuildShellScript.m */; };
+		29D8D5F41F0A7B7C0030D29C /* XCFrameworkDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5D81F0A7B560030D29C /* XCFrameworkDefinition.m */; };
+		29D8D5F51F0A7B7C0030D29C /* XCFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5D91F0A7B560030D29C /* XCFileOperationQueue.m */; };
+		29D8D5F61F0A7B7C0030D29C /* XCAbstractDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5DA1F0A7B560030D29C /* XCAbstractDefinition.m */; };
+		29D8D5F71F0A7B7C0030D29C /* XCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5DB1F0A7B560030D29C /* XCProject.m */; };
+		29D8D5F81F0A7B7C0030D29C /* XCClassDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5DF1F0A7B560030D29C /* XCClassDefinition.m */; };
+		29D8D5F91F0A7B7D0030D29C /* XcodeMemberType.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5E11F0A7B560030D29C /* XcodeMemberType.m */; };
+		29D8D5FA1F0A7B7D0030D29C /* XCSourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5E21F0A7B560030D29C /* XCSourceFile.m */; };
+		29D8D5FB1F0A7B7D0030D29C /* XCBuildShellScriptDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5E41F0A7B560030D29C /* XCBuildShellScriptDefinition.m */; };
+		29D8D5FC1F0A7B7D0030D29C /* XCProject+SubProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5E51F0A7B560030D29C /* XCProject+SubProject.m */; };
+		29D8D5FD1F0A7B7D0030D29C /* XCGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5E61F0A7B560030D29C /* XCGroup.m */; };
+		29D8D5FE1F0A7B7D0030D29C /* XcodeEditorCPPWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D5E81F0A7B560030D29C /* XcodeEditorCPPWrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +53,61 @@
 
 /* Begin PBXFileReference section */
 		293BFD161DC10854003FAEF0 /* XcodeZombieCodeAnalyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XcodeZombieCodeAnalyzer; sourceTree = BUILT_PRODUCTS_DIR; };
-		293BFD201DC10A55003FAEF0 /* ZombieCodeUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZombieCodeUtil.hpp; sourceTree = "<group>"; };
-		293BFD211DC10A55003FAEF0 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 		293BFD221DC10A55003FAEF0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		29C306371F0A3A6E00A5C308 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		29C306411F0A3B1A00A5C308 /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
+		29C306421F0A3B1A00A5C308 /* ZombieCodeUtil.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ZombieCodeUtil.cpp; sourceTree = "<group>"; };
+		29C306431F0A3B1A00A5C308 /* ClangZombieCodePlugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClangZombieCodePlugin.cpp; sourceTree = "<group>"; };
+		29C306441F0A3B1A00A5C308 /* ZombieCodeUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ZombieCodeUtil.hpp; sourceTree = "<group>"; };
+		29C306451F0A3B1A00A5C308 /* ClangZombieCodePlugin.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClangZombieCodePlugin.hpp; sourceTree = "<group>"; };
+		29D8D5B51F0A76BD0030D29C /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
+		29D8D5B71F0A7B560030D29C /* XcodeEditorCPPWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcodeEditorCPPWrapper.h; sourceTree = "<group>"; };
+		29D8D5BA1F0A7B560030D29C /* XCXibDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCXibDefinition.h; sourceTree = "<group>"; };
+		29D8D5BB1F0A7B560030D29C /* XcodeGroupMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcodeGroupMember.h; sourceTree = "<group>"; };
+		29D8D5BC1F0A7B560030D29C /* XCFileOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCFileOperationQueue.h; sourceTree = "<group>"; };
+		29D8D5BD1F0A7B560030D29C /* XCFrameworkDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCFrameworkDefinition.h; sourceTree = "<group>"; };
+		29D8D5BE1F0A7B560030D29C /* XCVersionGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCVersionGroup.m; sourceTree = "<group>"; };
+		29D8D5BF1F0A7B560030D29C /* XCBuildShellScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCBuildShellScript.h; sourceTree = "<group>"; };
+		29D8D5C01F0A7B560030D29C /* XcodeSourceTreeType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XcodeSourceTreeType.m; sourceTree = "<group>"; };
+		29D8D5C11F0A7B560030D29C /* XCClassDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCClassDefinition.h; sourceTree = "<group>"; };
+		29D8D5C21F0A7B560030D29C /* XCSourceFileDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCSourceFileDefinition.m; sourceTree = "<group>"; };
+		29D8D5C31F0A7B560030D29C /* XCSubProjectDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCSubProjectDefinition.m; sourceTree = "<group>"; };
+		29D8D5C41F0A7B560030D29C /* XCProjectBuildConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCProjectBuildConfig.m; sourceTree = "<group>"; };
+		29D8D5C51F0A7B560030D29C /* XCProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCProject.h; sourceTree = "<group>"; };
+		29D8D5C61F0A7B560030D29C /* XCAbstractDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCAbstractDefinition.h; sourceTree = "<group>"; };
+		29D8D5C71F0A7B560030D29C /* XCTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCTarget.m; sourceTree = "<group>"; };
+		29D8D5C81F0A7B560030D29C /* XCGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCGroup.h; sourceTree = "<group>"; };
+		29D8D5CA1F0A7B560030D29C /* NSString+RemoveEmoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+RemoveEmoji.m"; sourceTree = "<group>"; };
+		29D8D5CB1F0A7B560030D29C /* XCKeyBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCKeyBuilder.h; sourceTree = "<group>"; };
+		29D8D5CC1F0A7B560030D29C /* XCKeyBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCKeyBuilder.m; sourceTree = "<group>"; };
+		29D8D5CD1F0A7B560030D29C /* NSString+RemoveEmoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+RemoveEmoji.h"; sourceTree = "<group>"; };
+		29D8D5CE1F0A7B560030D29C /* XCProject+SubProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCProject+SubProject.h"; sourceTree = "<group>"; };
+		29D8D5CF1F0A7B560030D29C /* XcodeSourceFileType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XcodeSourceFileType.m; sourceTree = "<group>"; };
+		29D8D5D01F0A7B560030D29C /* XCBuildShellScriptDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCBuildShellScriptDefinition.h; sourceTree = "<group>"; };
+		29D8D5D11F0A7B560030D29C /* XCSourceFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCSourceFile.h; sourceTree = "<group>"; };
+		29D8D5D21F0A7B560030D29C /* XcodeEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcodeEditor.h; sourceTree = "<group>"; };
+		29D8D5D31F0A7B560030D29C /* XcodeMemberType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcodeMemberType.h; sourceTree = "<group>"; };
+		29D8D5D41F0A7B560030D29C /* XCXibDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCXibDefinition.m; sourceTree = "<group>"; };
+		29D8D5D51F0A7B560030D29C /* XCBuildFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCBuildFile.h; sourceTree = "<group>"; };
+		29D8D5D61F0A7B560030D29C /* XCBuildShellScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCBuildShellScript.m; sourceTree = "<group>"; };
+		29D8D5D71F0A7B560030D29C /* XCVersionGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCVersionGroup.h; sourceTree = "<group>"; };
+		29D8D5D81F0A7B560030D29C /* XCFrameworkDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCFrameworkDefinition.m; sourceTree = "<group>"; };
+		29D8D5D91F0A7B560030D29C /* XCFileOperationQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCFileOperationQueue.m; sourceTree = "<group>"; };
+		29D8D5DA1F0A7B560030D29C /* XCAbstractDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCAbstractDefinition.m; sourceTree = "<group>"; };
+		29D8D5DB1F0A7B560030D29C /* XCProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCProject.m; sourceTree = "<group>"; };
+		29D8D5DC1F0A7B560030D29C /* XCProjectBuildConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCProjectBuildConfig.h; sourceTree = "<group>"; };
+		29D8D5DD1F0A7B560030D29C /* XCSubProjectDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCSubProjectDefinition.h; sourceTree = "<group>"; };
+		29D8D5DE1F0A7B560030D29C /* XCSourceFileDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCSourceFileDefinition.h; sourceTree = "<group>"; };
+		29D8D5DF1F0A7B560030D29C /* XCClassDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCClassDefinition.m; sourceTree = "<group>"; };
+		29D8D5E01F0A7B560030D29C /* XcodeSourceTreeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcodeSourceTreeType.h; sourceTree = "<group>"; };
+		29D8D5E11F0A7B560030D29C /* XcodeMemberType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XcodeMemberType.m; sourceTree = "<group>"; };
+		29D8D5E21F0A7B560030D29C /* XCSourceFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCSourceFile.m; sourceTree = "<group>"; };
+		29D8D5E31F0A7B560030D29C /* XcodeSourceFileType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcodeSourceFileType.h; sourceTree = "<group>"; };
+		29D8D5E41F0A7B560030D29C /* XCBuildShellScriptDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCBuildShellScriptDefinition.m; sourceTree = "<group>"; };
+		29D8D5E51F0A7B560030D29C /* XCProject+SubProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XCProject+SubProject.m"; sourceTree = "<group>"; };
+		29D8D5E61F0A7B560030D29C /* XCGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCGroup.m; sourceTree = "<group>"; };
+		29D8D5E71F0A7B560030D29C /* XCTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTarget.h; sourceTree = "<group>"; };
+		29D8D5E81F0A7B560030D29C /* XcodeEditorCPPWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XcodeEditorCPPWrapper.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D8D5B61F0A76D00030D29C /* libncurses.tbd in Frameworks */,
+				29C306381F0A3A7500A5C308 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +128,7 @@
 			children = (
 				293BFD181DC10854003FAEF0 /* XcodeZombieCodeAnalyzer */,
 				293BFD171DC10854003FAEF0 /* Products */,
+				29C306361F0A3A6D00A5C308 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,11 +143,102 @@
 		293BFD181DC10854003FAEF0 /* XcodeZombieCodeAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				293BFD201DC10A55003FAEF0 /* ZombieCodeUtil.hpp */,
-				293BFD211DC10A55003FAEF0 /* json.hpp */,
+				29D8D5B81F0A7B560030D29C /* Vendor */,
+				29D8D5B71F0A7B560030D29C /* XcodeEditorCPPWrapper.h */,
+				29D8D5E81F0A7B560030D29C /* XcodeEditorCPPWrapper.mm */,
+				29C306401F0A3B1A00A5C308 /* Analyze */,
 				293BFD221DC10A55003FAEF0 /* main.cpp */,
 			);
 			path = XcodeZombieCodeAnalyzer;
+			sourceTree = "<group>";
+		};
+		29C306361F0A3A6D00A5C308 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D5B51F0A76BD0030D29C /* libncurses.tbd */,
+				29C306371F0A3A6E00A5C308 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29C306401F0A3B1A00A5C308 /* Analyze */ = {
+			isa = PBXGroup;
+			children = (
+				29C306411F0A3B1A00A5C308 /* json.hpp */,
+				29C306421F0A3B1A00A5C308 /* ZombieCodeUtil.cpp */,
+				29C306431F0A3B1A00A5C308 /* ClangZombieCodePlugin.cpp */,
+				29C306441F0A3B1A00A5C308 /* ZombieCodeUtil.hpp */,
+				29C306451F0A3B1A00A5C308 /* ClangZombieCodePlugin.hpp */,
+			);
+			path = Analyze;
+			sourceTree = "<group>";
+		};
+		29D8D5B81F0A7B560030D29C /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D5B91F0A7B560030D29C /* XcodeEditor */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		29D8D5B91F0A7B560030D29C /* XcodeEditor */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D5BA1F0A7B560030D29C /* XCXibDefinition.h */,
+				29D8D5BB1F0A7B560030D29C /* XcodeGroupMember.h */,
+				29D8D5BC1F0A7B560030D29C /* XCFileOperationQueue.h */,
+				29D8D5BD1F0A7B560030D29C /* XCFrameworkDefinition.h */,
+				29D8D5BE1F0A7B560030D29C /* XCVersionGroup.m */,
+				29D8D5BF1F0A7B560030D29C /* XCBuildShellScript.h */,
+				29D8D5C01F0A7B560030D29C /* XcodeSourceTreeType.m */,
+				29D8D5C11F0A7B560030D29C /* XCClassDefinition.h */,
+				29D8D5C21F0A7B560030D29C /* XCSourceFileDefinition.m */,
+				29D8D5C31F0A7B560030D29C /* XCSubProjectDefinition.m */,
+				29D8D5C41F0A7B560030D29C /* XCProjectBuildConfig.m */,
+				29D8D5C51F0A7B560030D29C /* XCProject.h */,
+				29D8D5C61F0A7B560030D29C /* XCAbstractDefinition.h */,
+				29D8D5C71F0A7B560030D29C /* XCTarget.m */,
+				29D8D5C81F0A7B560030D29C /* XCGroup.h */,
+				29D8D5C91F0A7B560030D29C /* Utils */,
+				29D8D5CE1F0A7B560030D29C /* XCProject+SubProject.h */,
+				29D8D5CF1F0A7B560030D29C /* XcodeSourceFileType.m */,
+				29D8D5D01F0A7B560030D29C /* XCBuildShellScriptDefinition.h */,
+				29D8D5D11F0A7B560030D29C /* XCSourceFile.h */,
+				29D8D5D21F0A7B560030D29C /* XcodeEditor.h */,
+				29D8D5D31F0A7B560030D29C /* XcodeMemberType.h */,
+				29D8D5D41F0A7B560030D29C /* XCXibDefinition.m */,
+				29D8D5D51F0A7B560030D29C /* XCBuildFile.h */,
+				29D8D5D61F0A7B560030D29C /* XCBuildShellScript.m */,
+				29D8D5D71F0A7B560030D29C /* XCVersionGroup.h */,
+				29D8D5D81F0A7B560030D29C /* XCFrameworkDefinition.m */,
+				29D8D5D91F0A7B560030D29C /* XCFileOperationQueue.m */,
+				29D8D5DA1F0A7B560030D29C /* XCAbstractDefinition.m */,
+				29D8D5DB1F0A7B560030D29C /* XCProject.m */,
+				29D8D5DC1F0A7B560030D29C /* XCProjectBuildConfig.h */,
+				29D8D5DD1F0A7B560030D29C /* XCSubProjectDefinition.h */,
+				29D8D5DE1F0A7B560030D29C /* XCSourceFileDefinition.h */,
+				29D8D5DF1F0A7B560030D29C /* XCClassDefinition.m */,
+				29D8D5E01F0A7B560030D29C /* XcodeSourceTreeType.h */,
+				29D8D5E11F0A7B560030D29C /* XcodeMemberType.m */,
+				29D8D5E21F0A7B560030D29C /* XCSourceFile.m */,
+				29D8D5E31F0A7B560030D29C /* XcodeSourceFileType.h */,
+				29D8D5E41F0A7B560030D29C /* XCBuildShellScriptDefinition.m */,
+				29D8D5E51F0A7B560030D29C /* XCProject+SubProject.m */,
+				29D8D5E61F0A7B560030D29C /* XCGroup.m */,
+				29D8D5E71F0A7B560030D29C /* XCTarget.h */,
+			);
+			path = XcodeEditor;
+			sourceTree = "<group>";
+		};
+		29D8D5C91F0A7B560030D29C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D5CA1F0A7B560030D29C /* NSString+RemoveEmoji.m */,
+				29D8D5CB1F0A7B560030D29C /* XCKeyBuilder.h */,
+				29D8D5CC1F0A7B560030D29C /* XCKeyBuilder.m */,
+				29D8D5CD1F0A7B560030D29C /* NSString+RemoveEmoji.h */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +299,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293BFD231DC10A55003FAEF0 /* main.cpp in Sources */,
+				29D8D5E91F0A7B7C0030D29C /* XCVersionGroup.m in Sources */,
+				29D8D5EA1F0A7B7C0030D29C /* XcodeSourceTreeType.m in Sources */,
+				29D8D5EB1F0A7B7C0030D29C /* XCSourceFileDefinition.m in Sources */,
+				29D8D5EC1F0A7B7C0030D29C /* XCSubProjectDefinition.m in Sources */,
+				29D8D5ED1F0A7B7C0030D29C /* XCProjectBuildConfig.m in Sources */,
+				29D8D5EE1F0A7B7C0030D29C /* XCTarget.m in Sources */,
+				29D8D5EF1F0A7B7C0030D29C /* NSString+RemoveEmoji.m in Sources */,
+				29D8D5F01F0A7B7C0030D29C /* XCKeyBuilder.m in Sources */,
+				29D8D5F11F0A7B7C0030D29C /* XcodeSourceFileType.m in Sources */,
+				29D8D5F21F0A7B7C0030D29C /* XCXibDefinition.m in Sources */,
+				29D8D5F31F0A7B7C0030D29C /* XCBuildShellScript.m in Sources */,
+				29D8D5F41F0A7B7C0030D29C /* XCFrameworkDefinition.m in Sources */,
+				29D8D5F51F0A7B7C0030D29C /* XCFileOperationQueue.m in Sources */,
+				29D8D5F61F0A7B7C0030D29C /* XCAbstractDefinition.m in Sources */,
+				29D8D5F71F0A7B7C0030D29C /* XCProject.m in Sources */,
+				29D8D5F81F0A7B7C0030D29C /* XCClassDefinition.m in Sources */,
+				29D8D5F91F0A7B7D0030D29C /* XcodeMemberType.m in Sources */,
+				29D8D5FA1F0A7B7D0030D29C /* XCSourceFile.m in Sources */,
+				29D8D5FB1F0A7B7D0030D29C /* XCBuildShellScriptDefinition.m in Sources */,
+				29D8D5FC1F0A7B7D0030D29C /* XCProject+SubProject.m in Sources */,
+				29D8D5FD1F0A7B7D0030D29C /* XCGroup.m in Sources */,
+				29D8D5FE1F0A7B7D0030D29C /* XcodeEditorCPPWrapper.mm in Sources */,
+				29D8D5AF1F0A5FAB0030D29C /* json.hpp in Sources */,
+				29D8D5B01F0A5FAB0030D29C /* ZombieCodeUtil.cpp in Sources */,
+				29D8D5B11F0A5FAB0030D29C /* ClangZombieCodePlugin.cpp in Sources */,
+				29D8D5B21F0A5FAB0030D29C /* ZombieCodeUtil.hpp in Sources */,
+				29D8D5B31F0A5FAB0030D29C /* ClangZombieCodePlugin.hpp in Sources */,
+				29D8D5B41F0A5FAB0030D29C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +356,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -171,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -204,6 +406,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -212,8 +415,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -221,18 +425,98 @@
 		293BFD1E1DC10854003FAEF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/../Analyzer;
-				DEVELOPMENT_TEAM = VP3AM7E5ZL;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = (
+					/opt/llvm/llvm/include,
+					/opt/llvm/llvm/tools/clang/include,
+					/opt/llvm/llvm_build/include,
+					/opt/llvm/llvm_build/tools/clang/include,
+				);
+				LIBRARY_SEARCH_PATHS = /opt/llvm/llvm_build/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lclangTooling",
+					"-lLLVMSupport",
+					"-lLLVMDemangle",
+					"-lclangFrontend",
+					"-lclangSema",
+					"-lclangAST",
+					"-lclangBasic",
+					"-lclangSerialization",
+					"-lLLVMIRReader",
+					"-lclangLex",
+					"-lclangEdit",
+					"-lclangAnalysis",
+					"-lclangDriver",
+					"-lLLVMBitReader",
+					"-lLLVMOption",
+					"-lLLVMMC",
+					"-lLLVMProfileData",
+					"-lLLVMMIRParser",
+					"-lLLVMCore",
+					"-lclangParse",
+					"-lLLVMMCParser",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx10.13;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
 		293BFD1F1DC10854003FAEF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/../Analyzer;
-				DEVELOPMENT_TEAM = VP3AM7E5ZL;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = (
+					/opt/llvm/llvm/include,
+					/opt/llvm/llvm/tools/clang/include,
+					/opt/llvm/llvm_build/include,
+					/opt/llvm/llvm_build/tools/clang/include,
+				);
+				LIBRARY_SEARCH_PATHS = /opt/llvm/llvm_build/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lclangTooling",
+					"-lLLVMSupport",
+					"-lLLVMDemangle",
+					"-lclangFrontend",
+					"-lclangSema",
+					"-lclangAST",
+					"-lclangBasic",
+					"-lclangSerialization",
+					"-lLLVMIRReader",
+					"-lclangLex",
+					"-lclangEdit",
+					"-lclangAnalysis",
+					"-lclangDriver",
+					"-lLLVMBitReader",
+					"-lLLVMOption",
+					"-lLLVMMC",
+					"-lLLVMProfileData",
+					"-lLLVMMIRParser",
+					"-lLLVMCore",
+					"-lclangParse",
+					"-lLLVMMCParser",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx10.13;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -246,7 +530,7 @@
 				293BFD1C1DC10854003FAEF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		293BFD1D1DC10854003FAEF0 /* Build configuration list for PBXNativeTarget "XcodeZombieCodeAnalyzer" */ = {
 			isa = XCConfigurationList;
@@ -255,7 +539,7 @@
 				293BFD1F1DC10854003FAEF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
