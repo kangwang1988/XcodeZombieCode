@@ -6,6 +6,7 @@
 //  Copyright © 2016 appsquickly. All rights reserved.
 //
 
+#import "XcodeMemberType.h"
 #import <Foundation/Foundation.h>
 
 @protocol XCBuildFile <NSObject>

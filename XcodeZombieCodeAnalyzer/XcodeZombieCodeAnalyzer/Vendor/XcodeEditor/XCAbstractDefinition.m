@@ -9,27 +9,22 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
 #import "XCAbstractDefinition.h"
-
 
 @implementation XCAbstractDefinition
 
 @synthesize fileOperationType = _fileOperationType;
 
-
-/* ====================================================================================================================================== */
+/* ======================================================================================================================================
+ */
 #pragma mark - Initialization & Destruction
 
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        _fileOperationType = XCFileOperationTypeOverwrite;
-    }
-    return self;
+- (id)init {
+  self = [super init];
+  if (self) {
+    _fileOperationType = XCFileOperationTypeOverwrite;
+  }
+  return self;
 }
-
 
 @end

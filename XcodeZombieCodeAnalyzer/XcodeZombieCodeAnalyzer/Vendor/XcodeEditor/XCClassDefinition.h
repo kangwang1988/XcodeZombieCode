@@ -9,45 +9,46 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#import <Foundation/Foundation.h>
 #import "XCAbstractDefinition.h"
+#import <Foundation/Foundation.h>
 
-typedef enum
-{
-    ObjectiveC,
-    ObjectiveCPlusPlus,
-    CPlusPlus,
-} ClassDefinitionLanguage;
+typedef enum {
+  ObjectiveC,
+  ObjectiveCPlusPlus,
+  CPlusPlus,
+}
+ClassDefinitionLanguage;
 
-@interface XCClassDefinition : XCAbstractDefinition
-{
+@interface XCClassDefinition : XCAbstractDefinition {
 
-    NSString* _className;
-    NSString* _header;
-    NSString* _source;
+  NSString *_className;
+  NSString *_header;
+  NSString *_source;
 
 @private
-    ClassDefinitionLanguage _language;
+  ClassDefinitionLanguage _language;
 }
 
-@property(strong, nonatomic, readonly) NSString* className;
-@property(nonatomic, strong) NSString* header;
-@property(nonatomic, strong) NSString* source;
+@property(strong, nonatomic, readonly) NSString *className;
+@property(nonatomic, strong) NSString *header;
+@property(nonatomic, strong) NSString *source;
 
-+ (XCClassDefinition*)classDefinitionWithName:(NSString*)fileName;
++ (XCClassDefinition *)classDefinitionWithName:(NSString *)fileName;
 
-+ (XCClassDefinition*)classDefinitionWithName:(NSString*)className language:(ClassDefinitionLanguage)language;
++ (XCClassDefinition *)classDefinitionWithName:(NSString *)className
+                                      language:
+                                          (ClassDefinitionLanguage)language;
 
 /**
 * Initializes a new objective-c class definition.
 */
-- (id)initWithName:(NSString*)fileName;
+- (id)initWithName:(NSString *)fileName;
 
 /**
 * Initializes a new class definition with the specified language.
 */
-- (id)initWithName:(NSString*)className language:(ClassDefinitionLanguage)language;
+- (id)initWithName:(NSString *)className
+          language:(ClassDefinitionLanguage)language;
 
 - (BOOL)isObjectiveC;
 
@@ -55,8 +56,8 @@ typedef enum
 
 - (BOOL)isCPlusPlus;
 
-- (NSString*)headerFileName;
+- (NSString *)headerFileName;
 
-- (NSString*)sourceFileName;
+- (NSString *)sourceFileName;
 
 @end

@@ -5,7 +5,7 @@ cd $dir
 
 #Clear Invalid Data.
 rm *.jsonpart
-#rm *.json
+rm *.json
 
 #clang-format
 prjDir=$(dirname $dir)

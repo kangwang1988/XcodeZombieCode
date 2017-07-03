@@ -9,10 +9,10 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import <Foundation/Foundation.h>
+#import "XcodeGroupMember.h"
 #import "XcodeMemberType.h"
 #import "XcodeSourceFileType.h"
-#import "XcodeGroupMember.h"
+#import <Foundation/Foundation.h>
 
 @class XCClassDefinition;
 @class XCGroup;
@@ -23,36 +23,35 @@
 @class XCProjectBuildConfig;
 @class XCVersionGroup;
 
-@interface XCProject : NSObject
-{
+@interface XCProject : NSObject {
 @protected
-    XCFileOperationQueue* _fileOperationQueue;
+  XCFileOperationQueue *_fileOperationQueue;
 
-    NSString* _filePath;
-    NSMutableDictionary* _dataStore;
-    NSMutableArray* _targets;
+  NSString *_filePath;
+  NSMutableDictionary *_dataStore;
+  NSMutableArray *_targets;
 
-    NSMutableDictionary* _groups;
-    NSMutableDictionary* _versionGroups;
-    NSMutableDictionary* _configurations;
+  NSMutableDictionary *_groups;
+  NSMutableDictionary *_versionGroups;
+  NSMutableDictionary *_configurations;
 
-    NSString* _defaultConfigurationName;
-    NSString* _rootObjectKey;
+  NSString *_defaultConfigurationName;
+  NSString *_rootObjectKey;
 }
 
-@property(nonatomic, strong, readonly) XCFileOperationQueue* fileOperationQueue;
+@property(nonatomic, strong, readonly) XCFileOperationQueue *fileOperationQueue;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
 //-------------------------------------------------------------------------------------------
 
-
-+ (XCProject*)projectWithFilePath:(NSString*)filePath;
++ (XCProject *)projectWithFilePath:(NSString *)filePath;
 
 /**
-* Creates a new project editor instance with the specified Project.xcodeproj file.
+* Creates a new project editor instance with the specified Project.xcodeproj
+* file.
 */
-- (id)initWithFilePath:(NSString*)filePath;
+- (id)initWithFilePath:(NSString *)filePath;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark Groupd Member
@@ -61,62 +60,68 @@
 //-------------------------------------------------------------------------------------------
 #pragma mark Files
 /**
-* Returns all file resources in the project, as an array of `XCSourceFile` objects.
+* Returns all file resources in the project, as an array of `XCSourceFile`
+* objects.
 */
-- (NSArray<XCSourceFile*>*)files;
+- (NSArray<XCSourceFile *> *)files;
 
 /**
 * Returns the project file with the specified key, or nil.
 */
-- (XCSourceFile*)fileWithKey:(NSString*)key;
+- (XCSourceFile *)fileWithKey:(NSString *)key;
 
 /**
-* Returns the project file with the specified name, or nil. If more than one project file matches the specified name,
+* Returns the project file with the specified name, or nil. If more than one
+* project file matches the specified name,
 * which one is returned is undefined.
 */
-- (XCSourceFile*)fileWithName:(NSString*)name;
+- (XCSourceFile *)fileWithName:(NSString *)name;
 
 /**
-* Returns all header files in the project, as an array of `XCSourceFile` objects.
+* Returns all header files in the project, as an array of `XCSourceFile`
+* objects.
 */
-- (NSArray<XCSourceFile*>*)headerFiles;
+- (NSArray<XCSourceFile *> *)headerFiles;
 
 /**
-* Returns all implementation obj-c implementation files in the project, as an array of `XCSourceFile` objects.
+* Returns all implementation obj-c implementation files in the project, as an
+* array of `XCSourceFile` objects.
 */
-- (NSArray<XCSourceFile*>*)objectiveCFiles;
+- (NSArray<XCSourceFile *> *)objectiveCFiles;
 
 /**
-* Returns all implementation obj-c++ implementation files in the project, as an array of `XCSourceFile` objects.
+* Returns all implementation obj-c++ implementation files in the project, as an
+* array of `XCSourceFile` objects.
 */
-- (NSArray<XCSourceFile*>*)objectiveCPlusPlusFiles;
+- (NSArray<XCSourceFile *> *)objectiveCPlusPlusFiles;
 
 /**
-* Returns all the xib files in the project, as an array of `XCSourceFile` objects.
+* Returns all the xib files in the project, as an array of `XCSourceFile`
+* objects.
 */
-- (NSArray<XCSourceFile*>*)xibFiles;
+- (NSArray<XCSourceFile *> *)xibFiles;
 
-- (NSArray<XCSourceFile*>*)imagePNGFiles;
+- (NSArray<XCSourceFile *> *)imagePNGFiles;
 
-- (NSString*)filePath;
-
+- (NSString *)filePath;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark Groups
 /**
 * Lists the groups in an xcode project, returning an array of `XCGroup` objects.
 */
-- (NSArray<XCGroup*>*)groups;
+- (NSArray<XCGroup *> *)groups;
 
 /**
  * Returns the root (top-level) _group.
  */
-- (XCGroup*)rootGroup;
+- (XCGroup *)rootGroup;
 
 /**
- * Returns the root (top-level) groups, if there are multiple. An array of rootGroup if there is only one.
+ * Returns the root (top-level) groups, if there are multiple. An array of
+ * rootGroup if there is only one.
  */
-- (NSArray<XCGroup*>*)rootGroups;
+- (NSArray<XCGroup *> *)rootGroups;
 
 /**
  * Returns the main group under root object
@@ -126,27 +131,28 @@
 /**
 * Returns the group with the given key, or nil.
 */
-- (XCGroup*)groupWithKey:(NSString*)key;
+- (XCGroup *)groupWithKey:(NSString *)key;
 
 /**
  * Returns the _first_ group in the project with the given name, or nil.
  */
-- (XCGroup*)groupWithDisplayName:(NSString*)name;
+- (XCGroup *)groupWithDisplayName:(NSString *)name;
 
 /**
- * Returns the _group with the specified display name path - the directory relative to the root _group. Eg Source/Main
+ * Returns the _group with the specified display name path - the directory
+ * relative to the root _group. Eg Source/Main
  */
-- (XCGroup*)groupWithPathFromRoot:(NSString*)path;
+- (XCGroup *)groupWithPathFromRoot:(NSString *)path;
 
 /**
 * Returns the parent _group for the _group or file with the given key;
 */
-- (XCGroup*)groupForGroupMemberWithKey:(NSString*)key;
+- (XCGroup *)groupForGroupMemberWithKey:(NSString *)key;
 
 /**
  * Returns the parent group for the group or file with the source file
  */
-- (XCGroup*)groupWithSourceFile:(XCSourceFile*)sourceFile;
+- (XCGroup *)groupWithSourceFile:(XCSourceFile *)sourceFile;
 
 /**
  * Removes all empty groups from the project.
@@ -156,53 +162,55 @@
 //-------------------------------------------------------------------------------------------
 #pragma mark VersionGroups
 /**
- * Lists the version groups in an xcode project, returning an array of `XCVersionGroup` objects.
+ * Lists the version groups in an xcode project, returning an array of
+ * `XCVersionGroup` objects.
  */
-- (NSArray*)versionGroups;
+- (NSArray *)versionGroups;
 
 /**
  * Returns the version group with the given key, or nil.
  */
-- (XCVersionGroup*)versionGroupWithKey:(NSString*)key;
+- (XCVersionGroup *)versionGroupWithKey:(NSString *)key;
 
 /**
  * Returns the version group with the given file name, or nil.
  */
-- (XCVersionGroup*)versionGroupWithName:(NSString*)name;
+- (XCVersionGroup *)versionGroupWithName:(NSString *)name;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark Targets
 /**
-* Lists the targets in an xcode project, returning an array of `XCTarget` objects.
+* Lists the targets in an xcode project, returning an array of `XCTarget`
+* objects.
 */
-- (NSArray<XCTarget*>*)targets;
+- (NSArray<XCTarget *> *)targets;
 
 /**
-* Returns the target with the specified name, or nil. 
+* Returns the target with the specified name, or nil.
 */
-- (XCTarget*)targetWithName:(NSString*)name;
+- (XCTarget *)targetWithName:(NSString *)name;
 
 /**
 * Lists the targets which are of application type.
 */
-- (NSArray*)applicationTargets;
+- (NSArray *)applicationTargets;
 
 #pragma mark Configurations
 /**
  * Lists the configurations in an xcode project.
  */
-- (NSDictionary<NSString*,XCProjectBuildConfig*>*)configurations;
+- (NSDictionary<NSString *, XCProjectBuildConfig *> *)configurations;
 /**
  * Returns the configuration with the specified name, or nil.
  */
-- (XCProjectBuildConfig*)configurationWithName:(NSString*)name;
+- (XCProjectBuildConfig *)configurationWithName:(NSString *)name;
 
 - (XCProjectBuildConfig *)defaultConfiguration;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark Deletion
 
-- (void)removeObjectWithKey:(NSString*)key;
+- (void)removeObjectWithKey:(NSString *)key;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark Saving
@@ -211,14 +219,13 @@
 */
 - (void)save;
 
-
 //-------------------------------------------------------------------------------------------
 /**
 * Raw project data.
 */
-- (NSMutableDictionary*)objects;
+- (NSMutableDictionary *)objects;
 
-- (NSMutableDictionary*)dataStore;
+- (NSMutableDictionary *)dataStore;
 
 - (void)dropCache;
 

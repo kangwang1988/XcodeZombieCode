@@ -9,35 +9,39 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-#import <Foundation/Foundation.h>
 #import "XCAbstractDefinition.h"
 #import "XcodeSourceFileType.h"
+#import <Foundation/Foundation.h>
 
-@interface XCSourceFileDefinition : XCAbstractDefinition
-{
+@interface XCSourceFileDefinition : XCAbstractDefinition {
 
-    NSString* _sourceFileName;
-    XcodeSourceFileType _type;
-    NSData* _data;
-
+  NSString *_sourceFileName;
+  XcodeSourceFileType _type;
+  NSData *_data;
 }
 
-@property(nonatomic, strong, readonly) NSString* sourceFileName;
-@property(nonatomic, strong, readonly) NSData* data;
+@property(nonatomic, strong, readonly) NSString *sourceFileName;
+@property(nonatomic, strong, readonly) NSData *data;
 @property(nonatomic, readonly) XcodeSourceFileType type;
 
-+ (XCSourceFileDefinition*)sourceDefinitionWithName:(NSString*)name text:(NSString*)text type:(XcodeSourceFileType)type;
++ (XCSourceFileDefinition *)sourceDefinitionWithName:(NSString *)name
+                                                text:(NSString *)text
+                                                type:(XcodeSourceFileType)type;
 
-+ (XCSourceFileDefinition*)sourceDefinitionWithName:(NSString*)name data:(NSData*)data type:(XcodeSourceFileType)type;
++ (XCSourceFileDefinition *)sourceDefinitionWithName:(NSString *)name
+                                                data:(NSData *)data
+                                                type:(XcodeSourceFileType)type;
 
 // For now you can add Asset Catalog only as reference
-+ (XCSourceFileDefinition*)sourceDefinitionWithAssetCatalogName:(NSString*)name;
++ (XCSourceFileDefinition *)sourceDefinitionWithAssetCatalogName:
+    (NSString *)name;
 
-- (id)initWithName:(NSString*)name text:(NSString*)text type:(XcodeSourceFileType)type;
+- (id)initWithName:(NSString *)name
+              text:(NSString *)text
+              type:(XcodeSourceFileType)type;
 
-- (id)initWithName:(NSString*)name data:(NSData*)data type:(XcodeSourceFileType)type;
-
+- (id)initWithName:(NSString *)name
+              data:(NSData *)data
+              type:(XcodeSourceFileType)type;
 
 @end

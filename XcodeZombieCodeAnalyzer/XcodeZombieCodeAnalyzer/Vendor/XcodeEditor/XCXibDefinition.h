@@ -9,28 +9,25 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-#import <Foundation/Foundation.h>
 #import "XCAbstractDefinition.h"
+#import <Foundation/Foundation.h>
 
-
-@interface XCXibDefinition : XCAbstractDefinition
-{
-    NSString* _name;
-    NSString* _content;
+@interface XCXibDefinition : XCAbstractDefinition {
+  NSString *_name;
+  NSString *_content;
 }
-@property(nonatomic, strong, readonly) NSString* name;
-@property(nonatomic, strong) NSString* content;
+@property(nonatomic, strong, readonly) NSString *name;
+@property(nonatomic, strong) NSString *content;
 
-+ (XCXibDefinition*)xibDefinitionWithName:(NSString*)name;
++ (XCXibDefinition *)xibDefinitionWithName:(NSString *)name;
 
-+ (XCXibDefinition*)xibDefinitionWithName:(NSString*)name content:(NSString*)content;
++ (XCXibDefinition *)xibDefinitionWithName:(NSString *)name
+                                   content:(NSString *)content;
 
-- (id)initWithName:(NSString*)name;
+- (id)initWithName:(NSString *)name;
 
-- (id)initWithName:(NSString*)name content:(NSString*)content;
+- (id)initWithName:(NSString *)name content:(NSString *)content;
 
-- (NSString*)xibFileName;
+- (NSString *)xibFileName;
 
 @end

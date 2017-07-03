@@ -17,23 +17,23 @@ FOUNDATION_EXPORT double XcodeEditorVersionNumber;
 //! Project version string for XcodeEditor.
 FOUNDATION_EXPORT const unsigned char XcodeEditorVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <XcodeEditor/PublicHeader.h>
-
+// In this header, you should import all the public headers of your framework
+// using statements like #import <XcodeEditor/PublicHeader.h>
 
 #import "XCAbstractDefinition.h"
-#import "XCGroup.h"
+#import "XCBuildShellScript.h"
+#import "XCBuildShellScriptDefinition.h"
 #import "XCClassDefinition.h"
 #import "XCFileOperationQueue.h"
 #import "XCFrameworkDefinition.h"
+#import "XCGroup.h"
+#import "XCKeyBuilder.h"
+#import "XCProject+SubProject.h"
 #import "XCProject.h"
+#import "XCProjectBuildConfig.h"
 #import "XCSourceFile.h"
 #import "XCSourceFileDefinition.h"
 #import "XCSubProjectDefinition.h"
 #import "XCTarget.h"
-#import "XCXibDefinition.h"
-#import "XCKeyBuilder.h"
-#import "XCProject+SubProject.h"
-#import "XCProjectBuildConfig.h"
-#import "XCBuildShellScript.h"
-#import "XCBuildShellScriptDefinition.h"
 #import "XCVersionGroup.h"
+#import "XCXibDefinition.h"

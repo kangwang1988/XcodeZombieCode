@@ -9,8 +9,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
 #import "XCSourceFileDefinition.h"
 
 @implementation XCSourceFileDefinition
@@ -19,67 +17,67 @@
 @synthesize type = _type;
 @synthesize data = _data;
 
-/* ====================================================================================================================================== */
+/* ======================================================================================================================================
+ */
 #pragma mark - Class Methods
 
-+ (XCSourceFileDefinition*)sourceDefinitionWithName:(NSString*)name text:(NSString*)text type:(XcodeSourceFileType)type
-{
++ (XCSourceFileDefinition *)sourceDefinitionWithName:(NSString *)name
+                                                text:(NSString *)text
+                                                type:(XcodeSourceFileType)type {
 
-    return [[XCSourceFileDefinition alloc] initWithName:name text:text type:type];
+  return [[XCSourceFileDefinition alloc] initWithName:name text:text type:type];
 }
 
-+ (XCSourceFileDefinition*)sourceDefinitionWithName:(NSString*)name data:(NSData*)data type:(XcodeSourceFileType)type
-{
++ (XCSourceFileDefinition *)sourceDefinitionWithName:(NSString *)name
+                                                data:(NSData *)data
+                                                type:(XcodeSourceFileType)type {
 
-    return [[XCSourceFileDefinition alloc] initWithName:name data:data type:type];
+  return [[XCSourceFileDefinition alloc] initWithName:name data:data type:type];
 }
 
-+ (XCSourceFileDefinition*)sourceDefinitionWithAssetCatalogName:(NSString*)name
-{
-    XCSourceFileDefinition *definition = [[XCSourceFileDefinition alloc] initWithName:name type:AssetCatalog];
-    definition.fileOperationType = XCFileOperationTypeAcceptExisting;
-    return definition;
++ (XCSourceFileDefinition *)sourceDefinitionWithAssetCatalogName:
+    (NSString *)name {
+  XCSourceFileDefinition *definition =
+      [[XCSourceFileDefinition alloc] initWithName:name type:AssetCatalog];
+  definition.fileOperationType = XCFileOperationTypeAcceptExisting;
+  return definition;
 }
 
-
-/* ====================================================================================================================================== */
+/* ======================================================================================================================================
+ */
 #pragma mark - Initialization & Destruction
 
-- (id)initWithName:(NSString*)name text:(NSString*)text type:(XcodeSourceFileType)type
-{
-    self = [super init];
-    if (self)
-    {
-        _sourceFileName = [name copy];
-        _data = [[text dataUsingEncoding:NSUTF8StringEncoding] copy];
-        _type = type;
-    }
-    return self;
+- (id)initWithName:(NSString *)name
+              text:(NSString *)text
+              type:(XcodeSourceFileType)type {
+  self = [super init];
+  if (self) {
+    _sourceFileName = [name copy];
+    _data = [[text dataUsingEncoding:NSUTF8StringEncoding] copy];
+    _type = type;
+  }
+  return self;
 }
 
-- (id)initWithName:(NSString*)name data:(NSData*)data type:(XcodeSourceFileType)type
-{
-    self = [super init];
-    if (self)
-    {
-        _sourceFileName = [name copy];
-        _data = [data copy];
-        _type = type;
-    }
-    return self;
-
+- (id)initWithName:(NSString *)name
+              data:(NSData *)data
+              type:(XcodeSourceFileType)type {
+  self = [super init];
+  if (self) {
+    _sourceFileName = [name copy];
+    _data = [data copy];
+    _type = type;
+  }
+  return self;
 }
 
-- (id)initWithName:(NSString*)name type:(XcodeSourceFileType)type
-{
-    self = [super init];
-    if (self)
-    {
-        _sourceFileName = [name copy];
-        _type = type;
-    }
-    return self;
+- (id)initWithName:(NSString *)name type:(XcodeSourceFileType)type {
+  self = [super init];
+  if (self) {
+    _sourceFileName = [name copy];
+    _type = type;
+  }
+  return self;
 }
-
 
 @end

@@ -9,8 +9,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
 #import "XCFrameworkDefinition.h"
 #import "XCProject.h"
 
@@ -25,48 +23,55 @@
 //-------------------------------------------------------------------------------------------
 
 + (XCFrameworkDefinition *)frameworkDefinitionWithFilePath:(NSString *)filePath
-                                         copyToDestination:(BOOL)copyToDestination
-{
-    return [XCFrameworkDefinition frameworkDefinitionWithFilePath:filePath copyToDestination:copyToDestination sourceTree:SourceTreeGroup];
+                                         copyToDestination:
+                                             (BOOL)copyToDestination {
+  return
+      [XCFrameworkDefinition frameworkDefinitionWithFilePath:filePath
+                                           copyToDestination:copyToDestination
+                                                  sourceTree:SourceTreeGroup];
 }
 
-+ (XCFrameworkDefinition *)frameworkDefinitionWithFilePath:(NSString *)filePath
-                                         copyToDestination:(BOOL)copyToDestination
-                                                sourceTree:(XcodeSourceTreeType)sourceTree
-{
-    
-    return [[XCFrameworkDefinition alloc] initWithFilePath:filePath copyToDestination:copyToDestination sourceTree:sourceTree];
++ (XCFrameworkDefinition *)
+frameworkDefinitionWithFilePath:(NSString *)filePath
+              copyToDestination:(BOOL)copyToDestination
+                     sourceTree:(XcodeSourceTreeType)sourceTree {
+
+  return [[XCFrameworkDefinition alloc] initWithFilePath:filePath
+                                       copyToDestination:copyToDestination
+                                              sourceTree:sourceTree];
 }
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Initialization & Destruction
 //-------------------------------------------------------------------------------------------
 
-- (id)initWithFilePath:(NSString *)filePath copyToDestination:(BOOL)copyToDestination
-{
-    return [self initWithFilePath:filePath copyToDestination:copyToDestination sourceTree:SourceTreeGroup];
+- (id)initWithFilePath:(NSString *)filePath
+     copyToDestination:(BOOL)copyToDestination {
+  return [self initWithFilePath:filePath
+              copyToDestination:copyToDestination
+                     sourceTree:SourceTreeGroup];
 }
 
-- (id)initWithFilePath:(NSString *)filePath copyToDestination:(BOOL)copyToDestination sourceTree:(XcodeSourceTreeType)sourceTree
-{
-    self = [super init];
-    if (self) {
-        _filePath = [filePath copy];
-        _copyToDestination = copyToDestination;
-        _sourceTree = sourceTree;
-    }
-    return self;
+- (id)initWithFilePath:(NSString *)filePath
+     copyToDestination:(BOOL)copyToDestination
+            sourceTree:(XcodeSourceTreeType)sourceTree {
+  self = [super init];
+  if (self) {
+    _filePath = [filePath copy];
+    _copyToDestination = copyToDestination;
+    _sourceTree = sourceTree;
+  }
+  return self;
 }
 
 //-------------------------------------------------------------------------------------------
 #pragma mark - Interface Methods
 //-------------------------------------------------------------------------------------------
 
-- (NSString *)fileName
-{
-    return [[_filePath lastPathComponent] stringByReplacingOccurrencesOfString:@"/" withString:@""];
+- (NSString *)fileName {
+  return
+      [[_filePath lastPathComponent] stringByReplacingOccurrencesOfString:@"/"
+                                                               withString:@""];
 }
-
-
 
 @end

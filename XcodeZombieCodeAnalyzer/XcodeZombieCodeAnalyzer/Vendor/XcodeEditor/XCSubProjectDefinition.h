@@ -9,51 +9,51 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-#import <Foundation/Foundation.h>
 #import "XCAbstractDefinition.h"
 #import "XcodeSourceFileType.h"
+#import <Foundation/Foundation.h>
 
 @class XCProject;
 
+@interface XCSubProjectDefinition : XCAbstractDefinition {
 
-@interface XCSubProjectDefinition : XCAbstractDefinition
-{
-
-    NSString *_name;
-    NSString *_path;
-    XcodeSourceFileType _type;
-    XCProject *_subProject;
-    XCProject *_parentProject;
-    NSString *_key;
-    NSString *_fullProjectPath;
-    NSString *_relativePath;
+  NSString *_name;
+  NSString *_path;
+  XcodeSourceFileType _type;
+  XCProject *_subProject;
+  XCProject *_parentProject;
+  NSString *_key;
+  NSString *_fullProjectPath;
+  NSString *_relativePath;
 }
 
+@property(nonatomic, strong, readonly) NSString *name;
+@property(nonatomic, strong, readonly) NSString *path;
+@property(nonatomic, readonly) XcodeSourceFileType type;
+@property(nonatomic, strong, readonly) XCProject *subProject;
+@property(nonatomic, strong, readonly) XCProject *parentProject;
+@property(nonatomic, strong, readonly) NSString *key;
+@property(nonatomic, strong, readwrite) NSString *fullProjectPath;
 
-@property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, strong, readonly) NSString *path;
-@property (nonatomic, readonly) XcodeSourceFileType type;
-@property (nonatomic, strong, readonly) XCProject *subProject;
-@property (nonatomic, strong, readonly) XCProject *parentProject;
-@property (nonatomic, strong, readonly) NSString *key;
-@property (nonatomic, strong, readwrite) NSString *fullProjectPath;
++ (XCSubProjectDefinition *)withName:(NSString *)name
+                                path:(NSString *)path
+                       parentProject:(XCProject *)parentProject;
 
-+ (XCSubProjectDefinition *)withName:(NSString *)name path:(NSString *)path parentProject:(XCProject *)parentProject;
-
-- (id)initWithName:(NSString *)name path:(NSString *)path parentProject:(XCProject *)parentProject;
+- (id)initWithName:(NSString *)name
+              path:(NSString *)path
+     parentProject:(XCProject *)parentProject;
 
 - (NSString *)projectFileName;
 
 - (NSString *)fullPathName;
 
-- (NSArray<NSString*> *)buildProductNames;
+- (NSArray<NSString *> *)buildProductNames;
 
 - (NSString *)projectKey;
 
 - (NSString *)pathRelativeToProjectRoot;
 
-- (void)initFullProjectPath:(NSString *)fullProjectPath groupPath:(NSString *)groupPath;
+- (void)initFullProjectPath:(NSString *)fullProjectPath
+                  groupPath:(NSString *)groupPath;
 
 @end

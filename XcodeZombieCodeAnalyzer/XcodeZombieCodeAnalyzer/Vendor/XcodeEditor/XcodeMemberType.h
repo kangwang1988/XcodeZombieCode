@@ -11,31 +11,31 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum
-{
-    PBXNilType,
-    PBXBuildFileType,
-    PBXContainerItemProxyType,
-    PBXCopyFilesBuildPhaseType,
-    PBXFileReferenceType,
-    PBXFrameworksBuildPhaseType,
-    PBXGroupType,
-    PBXNativeTargetType,
-    PBXProjectType,
-    PBXReferenceProxyType,
-    PBXResourcesBuildPhaseType,
-    PBXSourcesBuildPhaseType,
-    PBXTargetDependencyType,
-    PBXVariantGroupType,
-    XCBuildConfigurationType,
-    XCConfigurationListType,
-    PBXShellScriptBuildPhase,
-    XCVersionGroupType
-} XcodeMemberType;
+typedef enum {
+  PBXNilType,
+  PBXBuildFileType,
+  PBXContainerItemProxyType,
+  PBXCopyFilesBuildPhaseType,
+  PBXFileReferenceType,
+  PBXFrameworksBuildPhaseType,
+  PBXGroupType,
+  PBXNativeTargetType,
+  PBXProjectType,
+  PBXReferenceProxyType,
+  PBXResourcesBuildPhaseType,
+  PBXSourcesBuildPhaseType,
+  PBXTargetDependencyType,
+  PBXVariantGroupType,
+  XCBuildConfigurationType,
+  XCConfigurationListType,
+  PBXShellScriptBuildPhase,
+  XCVersionGroupType
+}
+XcodeMemberType;
 
 @interface NSString (XcodeMemberTypeExtensions)
 
-+ (NSString*)xce_stringFromMemberType:(XcodeMemberType)nodeType;
++ (NSString *)xce_stringFromMemberType:(XcodeMemberType)nodeType;
 
 - (XcodeMemberType)xce_asMemberType;
 
@@ -54,4 +54,3 @@ typedef enum
 - (BOOL)xce_hasVersionedGroupType;
 
 @end
-
