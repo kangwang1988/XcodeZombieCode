@@ -101,14 +101,7 @@ namespace ZombieCode
                         stringStream<<methodBody->getSourceRange().getBegin().getRawEncoding()<<"-"<<methodBody->getSourceRange().getEnd().getRawEncoding();
                         objcMethodRange = stringStream.str();
                         ZombieCodeUtil::appendObjcClsMethodImpl(objcIsInstanceMethod, objcClsImpl, objcSelector, objcMethodFilename, methodBody->getSourceRange().getBegin().getRawEncoding(),methodBody->getSourceRange().getEnd().getRawEncoding(), objcMethodSrcCode);
-                        LangOptions LangOpts;
-                        LangOpts.ObjC2 = true;
-                        PrintingPolicy Policy(LangOpts);
-                        string sMethod;
-                        raw_string_ostream paramMethod(sMethod);
-                        methodDecl->print(paramMethod, Policy);
-                        sMethod = paramMethod.str();
-                        if(sMethod.find("__attribute__((ibaction))")!=string::npos)
+                        if(methodDecl->hasAttr<clang::IBActionAttr>())
                         {
                             ZombieCodeUtil::appendObjcMethodImplCall(false, objcClsImpl, "alloc",objcIsInstanceMethod, objcClsImpl,objcSelector);
                         }

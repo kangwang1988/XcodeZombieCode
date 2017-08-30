@@ -178,11 +178,31 @@ void ZombieCodeUtil::synchronize(){
         ofs.close();
         cout<<"[KWLM]:Nofilename"<<endl;
     }
-    writeJsonToFile(clsMethodJson, gSrcRootPath+"/Analyzer/"+fileprefix+".clsMethod.jsonpart");
-    writeJsonToFile(clsInterfHierachy, gSrcRootPath+"/Analyzer/"+fileprefix+".clsInterfHierachy.jsonpart");
-    writeJsonToFile(protoInterfHierachy, gSrcRootPath+"/Analyzer/"+fileprefix+".protoInterfHierachy.jsonpart");
-    writeJsonToFile(clsMethodAddNotifsJson,gSrcRootPath+"/Analyzer/"+fileprefix+".clsMethodAddNotifs.jsonpart");
-    writeJsonToFile(notifPostedCallersJson, gSrcRootPath+"/Analyzer/"+fileprefix+".notifPostedCallers.jsonpart");
-    writeJsonToFile(protoInterfCallJson, gSrcRootPath+"/Analyzer/"+fileprefix+".protoInterfCall.jsonpart");
-    writeJsonToFile(openUrlJson, gSrcRootPath+"/Analyzer/"+fileprefix+".openUrlJson.jsonpart");
+    
+    if (clsMethodJson.size() > 0) {
+        writeJsonToFile(clsMethodJson, gSrcRootPath+"/Analyzer/"+fileprefix+".clsMethod.jsonpart");
+    }
+    if (clsInterfHierachy.size() > 0) {
+        writeJsonToFile(clsInterfHierachy, gSrcRootPath+"/Analyzer/"+fileprefix+".clsInterfHierachy.jsonpart");
+    }
+    if (protoInterfHierachy.size() > 0) {
+        writeJsonToFile(protoInterfHierachy, gSrcRootPath+"/Analyzer/"+fileprefix+".protoInterfHierachy.jsonpart");
+    }
+    if (clsMethodAddNotifsJson.size() > 0) {
+        writeJsonToFile(clsMethodAddNotifsJson, gSrcRootPath+"/Analyzer/"+fileprefix+".clsMethodAddNotifs.jsonpart");
+    }
+    if (notifPostedCallersJson.size() > 0) {
+        writeJsonToFile(notifPostedCallersJson, gSrcRootPath+"/Analyzer/"+fileprefix+".notifPostedCallers.jsonpart");
+    }
+    if (protoInterfCallJson.size() > 0) {
+        writeJsonToFile(protoInterfCallJson, gSrcRootPath+"/Analyzer/"+fileprefix+".protoInterfCall.jsonpart");
+    }
+    
+    // 将 json 清空
+    clsMethodJson.clear();
+    clsInterfHierachy.clear();
+    protoInterfHierachy.clear();
+    clsMethodAddNotifsJson.clear();
+    notifPostedCallersJson.clear();
+    protoInterfCallJson.clear();
 }
