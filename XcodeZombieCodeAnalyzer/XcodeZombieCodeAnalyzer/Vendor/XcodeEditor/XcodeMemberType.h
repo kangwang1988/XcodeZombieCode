@@ -30,8 +30,7 @@ typedef enum {
   XCConfigurationListType,
   PBXShellScriptBuildPhase,
   XCVersionGroupType
-}
-XcodeMemberType;
+} XcodeMemberType;
 
 @interface NSString (XcodeMemberTypeExtensions)
 

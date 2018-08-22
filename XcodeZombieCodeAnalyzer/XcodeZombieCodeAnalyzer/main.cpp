@@ -184,14 +184,14 @@ string joinedClsMethod(bool isInstanceMethod,string cls,string sel){
 }
 
 string getClsMethodToken(string clsMethod,ClsMethodTokenType tokenType){
-    clsMethod = trim(clsMethod);
+    clsMethod = trim_copy(clsMethod);
     switch (tokenType) {
         case ClsMethodTokenMethodType:
         {
             size_t pos = clsMethod.find("[");
             string str = clsMethod.substr(0,pos);
             if(pos != string::npos)
-                return trim(str);
+                return trim_copy(str);
             break;
         }
         case ClsMethodTokenClass:
@@ -202,7 +202,7 @@ string getClsMethodToken(string clsMethod,ClsMethodTokenType tokenType){
                 pos = str.find(" ");
                 if(pos != string::npos){
                     str = str.substr(0,pos);
-                    return trim(str);
+                    return trim_copy(str);
                 }
             }
             break;
@@ -212,7 +212,7 @@ string getClsMethodToken(string clsMethod,ClsMethodTokenType tokenType){
             size_t pos = clsMethod.rfind(" ");
             if(pos != string::npos){
                 string str = clsMethod.substr(pos+1,clsMethod.length()-pos-2);
-                return trim(str);
+                return trim_copy(str);
             }
             break;
         }

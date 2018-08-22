@@ -322,8 +322,8 @@ NSString *const XCProjectNotFoundException;
 
   NSDictionary *obj = [[self objects] objectForKey:key];
   if (obj && [[obj valueForKey:@"isa"] xce_hasVersionedGroupType]) {
-    XCVersionGroup *group =
-        [self createVersionGroupWithDictionary:obj forKey:key];
+    XCVersionGroup *group = [self createVersionGroupWithDictionary:obj
+                                                            forKey:key];
     _versionGroups[key] = group;
 
     return group;
@@ -397,8 +397,8 @@ NSString *const XCProjectNotFoundException;
 }
 
 - (NSData *)_fixEncodingInData:(NSData *)data {
-  NSString *source =
-      [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  NSString *source = [[NSString alloc] initWithData:data
+                                           encoding:NSUTF8StringEncoding];
   NSMutableString *destination = @"".mutableCopy;
   for (int i = 0; i < source.length; i++) {
     unichar c = [source characterAtIndex:i];

@@ -50,8 +50,8 @@
 
 - (BOOL)fileWithName:(NSString *)name
     existsInProjectDirectory:(NSString *)directory {
-  NSString *filePath =
-      [self destinationPathFor:name inProjectDirectory:directory];
+  NSString *filePath = [self destinationPathFor:name
+                             inProjectDirectory:directory];
   return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
 
@@ -78,8 +78,8 @@
   NSString *destinationPath =
       [[_baseDirectory stringByAppendingPathComponent:directory]
           stringByAppendingPathComponent:[filePath lastPathComponent]];
-  NSURL *destinationUrl =
-      [NSURL fileURLWithPath:destinationPath isDirectory:YES];
+  NSURL *destinationUrl = [NSURL fileURLWithPath:destinationPath
+                                     isDirectory:YES];
   [_frameworksToCopy setObject:sourceUrl forKey:destinationUrl];
 }
 
@@ -128,7 +128,6 @@
   [_frameworksToCopy
       enumerateKeysAndObjectsUsingBlock:^(NSURL *destinationUrl,
                                           NSURL *frameworkPath, BOOL *stop) {
-
         NSLog(@"$$$$$$$$$$$$$$ destination url: %@", destinationUrl);
         NSFileManager *fileManager = [NSFileManager defaultManager];
 

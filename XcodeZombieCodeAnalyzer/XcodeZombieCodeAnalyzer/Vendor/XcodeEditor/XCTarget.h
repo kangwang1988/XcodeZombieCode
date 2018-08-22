@@ -19,8 +19,8 @@
 @protocol XCBuildFile;
 
 /**
-* Represents a target in an xcode project.
-*/
+ * Represents a target in an xcode project.
+ */
 @interface XCTarget : NSObject {
 
   XCProject *_project;

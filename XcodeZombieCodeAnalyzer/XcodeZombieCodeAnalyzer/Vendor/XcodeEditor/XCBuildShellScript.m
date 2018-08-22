@@ -17,15 +17,15 @@
 //-------------------------------------------------------------------------------------------
 
 + (XCBuildShellScript *_Nonnull)
-            shellScriptWithProject:(XCProject *)project
-                               key:(NSString *)key
-                              name:(NSString *)name
-                             files:(NSArray<NSString *> *)files
-                        inputPaths:(NSArray<NSString *> *)inputPaths
-                       outputPaths:(NSArray<NSString *> *)outputPaths
-runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
-                         shellPath:(NSString *)shellPath
-                       shellScript:(NSString *)shellScript {
+                shellScriptWithProject:(XCProject *)project
+                                   key:(NSString *)key
+                                  name:(NSString *)name
+                                 files:(NSArray<NSString *> *)files
+                            inputPaths:(NSArray<NSString *> *)inputPaths
+                           outputPaths:(NSArray<NSString *> *)outputPaths
+    runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
+                             shellPath:(NSString *)shellPath
+                           shellScript:(NSString *)shellScript {
   return [[XCBuildShellScript alloc]
                          initWithProject:project
                                      key:key

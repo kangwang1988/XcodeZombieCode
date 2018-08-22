@@ -41,25 +41,29 @@
 //-------------------------------------------------------------------------------------------
 
 + (XCBuildShellScript *_Nonnull)
-            shellScriptWithProject:(XCProject *_Nonnull)project
-                               key:(NSString *_Nonnull)key
-                              name:(NSString *_Nullable)name
-                             files:(NSArray<NSString *> *_Nullable)files
-                        inputPaths:(NSArray<NSString *> *_Nullable)inputPaths
-                       outputPaths:(NSArray<NSString *> *_Nullable)outputPaths
-runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
-                         shellPath:(NSString *_Nullable)shellPath
-                       shellScript:(NSString *_Nonnull)shellScript;
+                shellScriptWithProject:(XCProject *_Nonnull)project
+                                   key:(NSString *_Nonnull)key
+                                  name:(NSString *_Nullable)name
+                                 files:(NSArray<NSString *> *_Nullable)files
+                            inputPaths:
+                                (NSArray<NSString *> *_Nullable)inputPaths
+                           outputPaths:
+                               (NSArray<NSString *> *_Nullable)outputPaths
+    runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
+                             shellPath:(NSString *_Nullable)shellPath
+                           shellScript:(NSString *_Nonnull)shellScript;
 
-- (instancetype _Nonnull)
-                   initWithProject:(XCProject *_Nonnull)project
-                               key:(NSString *_Nonnull)key
-                              name:(NSString *_Nullable)name
-                             files:(NSArray<NSString *> *_Nullable)files
-                        inputPaths:(NSArray<NSString *> *_Nullable)inputPaths
-                       outputPaths:(NSArray<NSString *> *_Nullable)outputPaths
-runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
-                         shellPath:(NSString *_Nullable)shellPath
-                       shellScript:(NSString *_Nonnull)shellScript;
+- (instancetype _Nonnull)initWithProject:(XCProject *_Nonnull)project
+                                     key:(NSString *_Nonnull)key
+                                    name:(NSString *_Nullable)name
+                                   files:(NSArray<NSString *> *_Nullable)files
+                              inputPaths:
+                                  (NSArray<NSString *> *_Nullable)inputPaths
+                             outputPaths:
+                                 (NSArray<NSString *> *_Nullable)outputPaths
+      runOnlyForDeploymentPostprocessing:
+          (BOOL)runOnlyForDeploymentPostprocessing
+                               shellPath:(NSString *_Nullable)shellPath
+                             shellScript:(NSString *_Nonnull)shellScript;
 
 @end

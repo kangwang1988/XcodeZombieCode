@@ -27,9 +27,9 @@
                                          copyToDestination:
                                              (BOOL)copyToDestination;
 + (XCFrameworkDefinition *)
-frameworkDefinitionWithFilePath:(NSString *)filePath
-              copyToDestination:(BOOL)copyToDestination
-                     sourceTree:(XcodeSourceTreeType)sourceTree;
+    frameworkDefinitionWithFilePath:(NSString *)filePath
+                  copyToDestination:(BOOL)copyToDestination
+                         sourceTree:(XcodeSourceTreeType)sourceTree;
 
 - (id)initWithFilePath:(NSString *)filePath
      copyToDestination:(BOOL)copyToDestination;

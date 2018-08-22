@@ -229,8 +229,8 @@
     keyName = name;
   }
   // remove old if it exists
-  NSString *existingProxyKey =
-      [self containerItemProxyKeyForName:keyName proxyType:proxyType];
+  NSString *existingProxyKey = [self containerItemProxyKeyForName:keyName
+                                                        proxyType:proxyType];
   if (existingProxyKey) {
     [[self objects] removeObjectForKey:existingProxyKey];
   }
@@ -257,9 +257,10 @@
 
 // makes a PBXReferenceProxy object for a given PBXContainerProxy object.
 // Replaces pre-existing objects.
-- (void)
-makeReferenceProxyForContainerItemProxy:(NSString *)containerItemProxyKey
-                  buildProductReference:(NSDictionary *)buildProductReference {
+- (void)makeReferenceProxyForContainerItemProxy:
+            (NSString *)containerItemProxyKey
+                          buildProductReference:
+                              (NSDictionary *)buildProductReference {
   NSString *path = [buildProductReference valueForKey:@"path"];
   // remove old if any exists
   NSArray *existingProxyKeys =

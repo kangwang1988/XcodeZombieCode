@@ -32,9 +32,9 @@
 }
 
 + (XCFrameworkDefinition *)
-frameworkDefinitionWithFilePath:(NSString *)filePath
-              copyToDestination:(BOOL)copyToDestination
-                     sourceTree:(XcodeSourceTreeType)sourceTree {
+    frameworkDefinitionWithFilePath:(NSString *)filePath
+                  copyToDestination:(BOOL)copyToDestination
+                         sourceTree:(XcodeSourceTreeType)sourceTree {
 
   return [[XCFrameworkDefinition alloc] initWithFilePath:filePath
                                        copyToDestination:copyToDestination

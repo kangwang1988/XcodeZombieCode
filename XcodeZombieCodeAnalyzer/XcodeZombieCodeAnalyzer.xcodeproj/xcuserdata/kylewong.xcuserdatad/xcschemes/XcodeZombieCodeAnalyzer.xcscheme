@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -46,7 +45,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -101,7 +99,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/kylewong/Documents/Codes/GitRepos/XcodeZombieCode/XcodeZombieCodeDemo/XcodeZombieCodeDemo.xcodeproj    /Users/kylewong/Documents/Codes/GitRepos/XcodeZombieCode   AppDelegate  -extra-arg=&quot;-isysroot/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk&quot; -extra-arg=&quot;-I/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1&quot; -extra-arg=&quot;-mios-version-min=8.0&quot;"
+            argument = "/Users/kylewong/Codes/Repos/XcodeZombieCode/XcodeZombieCodeDemo/XcodeZombieCodeDemo.xcodeproj    /Users/kylewong/Codes/Repos/XcodeZombieCode   AppDelegate  -extra-arg=&quot;-isysroot/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/&quot; -extra-arg=&quot;-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1&quot; -extra-arg=&quot;-mios-version-min=8.0&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

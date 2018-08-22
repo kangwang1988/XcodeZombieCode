@@ -16,13 +16,15 @@
 //-------------------------------------------------------------------------------------------
 
 + (XCBuildShellScriptDefinition *_Nonnull)
-     shellScriptDefinitionWithName:(NSString *)name
-                             files:(NSArray<NSString *> *_Nullable)files
-                        inputPaths:(NSArray<NSString *> *_Nullable)inputPaths
-                       outputPaths:(NSArray<NSString *> *_Nullable)outputPaths
-runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
-                         shellPath:(NSString *_Nullable)shellPath
-                       shellScript:(NSString *_Nonnull)shellScript {
+         shellScriptDefinitionWithName:(NSString *)name
+                                 files:(NSArray<NSString *> *_Nullable)files
+                            inputPaths:
+                                (NSArray<NSString *> *_Nullable)inputPaths
+                           outputPaths:
+                               (NSArray<NSString *> *_Nullable)outputPaths
+    runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
+                             shellPath:(NSString *_Nullable)shellPath
+                           shellScript:(NSString *_Nonnull)shellScript {
   return [[XCBuildShellScriptDefinition alloc]
                             initWithName:name
                                    files:files
@@ -37,14 +39,15 @@ runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
 #pragma mark - Initialization & Destruction
 //-------------------------------------------------------------------------------------------
 
-- (instancetype _Nonnull)
-                      initWithName:(NSString *_Nullable)name
-                             files:(NSArray<NSString *> *_Nullable)files
-                        inputPaths:(NSArray<NSString *> *_Nullable)inputPaths
-                       outputPaths:(NSArray<NSString *> *_Nullable)outputPaths
-runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
-                         shellPath:(NSString *_Nullable)shellPath
-                       shellScript:(NSString *_Nonnull)shellScript {
+- (instancetype _Nonnull)initWithName:(NSString *_Nullable)name
+                                 files:(NSArray<NSString *> *_Nullable)files
+                            inputPaths:
+                                (NSArray<NSString *> *_Nullable)inputPaths
+                           outputPaths:
+                               (NSArray<NSString *> *_Nullable)outputPaths
+    runOnlyForDeploymentPostprocessing:(BOOL)runOnlyForDeploymentPostprocessing
+                             shellPath:(NSString *_Nullable)shellPath
+                           shellScript:(NSString *_Nonnull)shellScript {
   self = [super init];
   if (self) {
     _name = [name stringByRemovingEmoji];

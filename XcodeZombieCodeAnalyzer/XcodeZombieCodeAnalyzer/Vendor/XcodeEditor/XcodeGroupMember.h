@@ -20,8 +20,8 @@
 - (NSString *)pathRelativeToProjectRoot;
 
 /**
-* Group members can either be other groups (PBXGroup) or source files
-* (PBXFileReference).
-*/
+ * Group members can either be other groups (PBXGroup) or source files
+ * (PBXFileReference).
+ */
 - (XcodeMemberType)groupMemberType;
 @end

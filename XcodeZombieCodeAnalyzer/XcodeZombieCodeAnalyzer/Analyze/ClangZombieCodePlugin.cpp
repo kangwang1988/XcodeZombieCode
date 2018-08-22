@@ -313,7 +313,7 @@ namespace ZombieCode
                 string s0;
                 raw_string_ostream param0(s0);
                 objcExpr->getArg(0)->printPretty(param0, 0, Policy);
-                string classExpr = trim(param0.str());
+                string classExpr = trim_copy(param0.str());
                 remove_blank(classExpr);
                 if(has_suffix(classExpr,"class]")){
                     classExpr = classExpr.substr(1,classExpr.length()-string("class]").length()-1);

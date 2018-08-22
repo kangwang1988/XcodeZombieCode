@@ -203,7 +203,7 @@
       if ([obj[@"fileRef"] isEqualToString:self.key]) {
         NSMutableDictionary *replaceBuildFile =
             [NSMutableDictionary dictionaryWithDictionary:obj];
-        NSDictionary *compilerFlagsDict = @{ @"COMPILER_FLAGS" : value };
+        NSDictionary *compilerFlagsDict = @{@"COMPILER_FLAGS" : value};
         if ([replaceBuildFile[@"settings"] objectForKey:@"COMPILER_FLAGS"] !=
             nil) {
           NSMutableDictionary *newSettings = [NSMutableDictionary
@@ -232,7 +232,7 @@
         NSMutableDictionary *replaceBuildFile =
             [NSMutableDictionary dictionaryWithDictionary:obj];
         if (![replaceBuildFile objectForKey:@"settings"]) {
-          replaceBuildFile[@"settings"] = @{ @"ATTRIBUTES" : @[ attribute ] };
+          replaceBuildFile[@"settings"] = @{@"ATTRIBUTES" : @[ attribute ]};
         } else {
           NSMutableDictionary *settingsDict = [NSMutableDictionary
               dictionaryWithDictionary:replaceBuildFile[@"settings"]];

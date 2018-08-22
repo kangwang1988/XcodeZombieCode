@@ -48,9 +48,9 @@
 + (XCProject *)projectWithFilePath:(NSString *)filePath;
 
 /**
-* Creates a new project editor instance with the specified Project.xcodeproj
-* file.
-*/
+ * Creates a new project editor instance with the specified Project.xcodeproj
+ * file.
+ */
 - (id)initWithFilePath:(NSString *)filePath;
 
 //-------------------------------------------------------------------------------------------
@@ -60,45 +60,45 @@
 //-------------------------------------------------------------------------------------------
 #pragma mark Files
 /**
-* Returns all file resources in the project, as an array of `XCSourceFile`
-* objects.
-*/
+ * Returns all file resources in the project, as an array of `XCSourceFile`
+ * objects.
+ */
 - (NSArray<XCSourceFile *> *)files;
 
 /**
-* Returns the project file with the specified key, or nil.
-*/
+ * Returns the project file with the specified key, or nil.
+ */
 - (XCSourceFile *)fileWithKey:(NSString *)key;
 
 /**
-* Returns the project file with the specified name, or nil. If more than one
-* project file matches the specified name,
-* which one is returned is undefined.
-*/
+ * Returns the project file with the specified name, or nil. If more than one
+ * project file matches the specified name,
+ * which one is returned is undefined.
+ */
 - (XCSourceFile *)fileWithName:(NSString *)name;
 
 /**
-* Returns all header files in the project, as an array of `XCSourceFile`
-* objects.
-*/
+ * Returns all header files in the project, as an array of `XCSourceFile`
+ * objects.
+ */
 - (NSArray<XCSourceFile *> *)headerFiles;
 
 /**
-* Returns all implementation obj-c implementation files in the project, as an
-* array of `XCSourceFile` objects.
-*/
+ * Returns all implementation obj-c implementation files in the project, as an
+ * array of `XCSourceFile` objects.
+ */
 - (NSArray<XCSourceFile *> *)objectiveCFiles;
 
 /**
-* Returns all implementation obj-c++ implementation files in the project, as an
-* array of `XCSourceFile` objects.
-*/
+ * Returns all implementation obj-c++ implementation files in the project, as an
+ * array of `XCSourceFile` objects.
+ */
 - (NSArray<XCSourceFile *> *)objectiveCPlusPlusFiles;
 
 /**
-* Returns all the xib files in the project, as an array of `XCSourceFile`
-* objects.
-*/
+ * Returns all the xib files in the project, as an array of `XCSourceFile`
+ * objects.
+ */
 - (NSArray<XCSourceFile *> *)xibFiles;
 
 - (NSArray<XCSourceFile *> *)imagePNGFiles;
@@ -108,8 +108,9 @@
 //-------------------------------------------------------------------------------------------
 #pragma mark Groups
 /**
-* Lists the groups in an xcode project, returning an array of `XCGroup` objects.
-*/
+ * Lists the groups in an xcode project, returning an array of `XCGroup`
+ * objects.
+ */
 - (NSArray<XCGroup *> *)groups;
 
 /**
@@ -129,8 +130,8 @@
 - (XCGroup *)mainGroup;
 
 /**
-* Returns the group with the given key, or nil.
-*/
+ * Returns the group with the given key, or nil.
+ */
 - (XCGroup *)groupWithKey:(NSString *)key;
 
 /**
@@ -145,8 +146,8 @@
 - (XCGroup *)groupWithPathFromRoot:(NSString *)path;
 
 /**
-* Returns the parent _group for the _group or file with the given key;
-*/
+ * Returns the parent _group for the _group or file with the given key;
+ */
 - (XCGroup *)groupForGroupMemberWithKey:(NSString *)key;
 
 /**
@@ -180,19 +181,19 @@
 //-------------------------------------------------------------------------------------------
 #pragma mark Targets
 /**
-* Lists the targets in an xcode project, returning an array of `XCTarget`
-* objects.
-*/
+ * Lists the targets in an xcode project, returning an array of `XCTarget`
+ * objects.
+ */
 - (NSArray<XCTarget *> *)targets;
 
 /**
-* Returns the target with the specified name, or nil.
-*/
+ * Returns the target with the specified name, or nil.
+ */
 - (XCTarget *)targetWithName:(NSString *)name;
 
 /**
-* Lists the targets which are of application type.
-*/
+ * Lists the targets which are of application type.
+ */
 - (NSArray *)applicationTargets;
 
 #pragma mark Configurations
@@ -215,14 +216,14 @@
 //-------------------------------------------------------------------------------------------
 #pragma mark Saving
 /**
-* Saves a project after editing.
-*/
+ * Saves a project after editing.
+ */
 - (void)save;
 
 //-------------------------------------------------------------------------------------------
 /**
-* Raw project data.
-*/
+ * Raw project data.
+ */
 - (NSMutableDictionary *)objects;
 
 - (NSMutableDictionary *)dataStore;

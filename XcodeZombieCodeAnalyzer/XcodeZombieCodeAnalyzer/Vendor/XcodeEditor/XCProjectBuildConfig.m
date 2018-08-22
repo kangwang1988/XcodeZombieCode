@@ -82,11 +82,12 @@
   return configurations;
 }
 
-+ (NSString *)
-duplicatedBuildConfigurationListWithKey:(NSString *)buildConfigurationListKey
-                              inProject:(XCProject *)project
-          withBuildConfigurationVisitor:
-              (void (^)(NSMutableDictionary *))buildConfigurationVisitor {
++ (NSString *)duplicatedBuildConfigurationListWithKey:
+                  (NSString *)buildConfigurationListKey
+                                            inProject:(XCProject *)project
+                        withBuildConfigurationVisitor:
+                            (void (^)(NSMutableDictionary *))
+                                buildConfigurationVisitor {
 
   NSDictionary *buildConfigurationList =
       project.objects[buildConfigurationListKey];
@@ -148,8 +149,8 @@ duplicatedBuildConfigurationListWithKey:(NSString *)buildConfigurationListKey
 }
 
 - (void)addOrReplaceSetting:(id<NSCopying>)setting forKey:(NSString *)key {
-  NSDictionary *settings =
-      [NSDictionary dictionaryWithObject:setting forKey:key];
+  NSDictionary *settings = [NSDictionary dictionaryWithObject:setting
+                                                       forKey:key];
   [self addBuildSettings:settings];
 
   NSMutableDictionary *dict =
@@ -194,10 +195,10 @@ duplicatedBuildConfigurationListWithKey:(NSString *)buildConfigurationListKey
 #pragma mark - Private Methods
 
 + (NSString *)
-duplicatedBuildConfigurationWithKey:(NSString *)buildConfigurationKey
-                          inProject:(XCProject *)project
-      withBuildConfigurationVisitor:
-          (void (^)(NSMutableDictionary *))buildConfigurationVisitor {
+    duplicatedBuildConfigurationWithKey:(NSString *)buildConfigurationKey
+                              inProject:(XCProject *)project
+          withBuildConfigurationVisitor:
+              (void (^)(NSMutableDictionary *))buildConfigurationVisitor {
   NSDictionary *buildConfiguration = project.objects[buildConfigurationKey];
   NSMutableDictionary *dupBuildConfiguration = [buildConfiguration mutableCopy];
 

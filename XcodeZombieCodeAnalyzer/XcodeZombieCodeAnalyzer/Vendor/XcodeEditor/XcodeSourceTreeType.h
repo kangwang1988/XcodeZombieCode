@@ -11,8 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum { SourceTreeSDKRoot, SourceTreeGroup }
-XcodeSourceTreeType;
+typedef enum { SourceTreeSDKRoot, SourceTreeGroup } XcodeSourceTreeType;
 
 @interface NSString (XcodeSourceTreeTypeExtensions)
 

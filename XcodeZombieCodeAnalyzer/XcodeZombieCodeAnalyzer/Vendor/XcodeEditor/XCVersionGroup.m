@@ -308,8 +308,9 @@
     if (type == AssetCatalog) {
       refName = [name lastPathComponent];
     }
-    NSDictionary *reference =
-        [self makeFileReferenceWithPath:name name:refName type:type];
+    NSDictionary *reference = [self makeFileReferenceWithPath:name
+                                                         name:refName
+                                                         type:type];
     fileKey = [[XCKeyBuilder forItemNamed:name] build];
     [_project objects][fileKey] = reference;
     [self addMemberWithKey:fileKey];
@@ -364,8 +365,9 @@
   XCSourceFile *currentSourceFile =
       (XCSourceFile *)[self memberWithDisplayName:name];
   if ((currentSourceFile) == nil) {
-    NSDictionary *reference =
-        [self makeFileReferenceWithPath:path name:name type:type];
+    NSDictionary *reference = [self makeFileReferenceWithPath:path
+                                                         name:name
+                                                         type:type];
     NSString *fileKey = [[XCKeyBuilder forItemNamed:name] build];
     [_project objects][fileKey] = reference;
     [self addMemberWithKey:fileKey];

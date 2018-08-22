@@ -16,8 +16,7 @@ typedef enum {
   ObjectiveC,
   ObjectiveCPlusPlus,
   CPlusPlus,
-}
-ClassDefinitionLanguage;
+} ClassDefinitionLanguage;
 
 @interface XCClassDefinition : XCAbstractDefinition {
 
@@ -40,13 +39,13 @@ ClassDefinitionLanguage;
                                           (ClassDefinitionLanguage)language;
 
 /**
-* Initializes a new objective-c class definition.
-*/
+ * Initializes a new objective-c class definition.
+ */
 - (id)initWithName:(NSString *)fileName;
 
 /**
-* Initializes a new class definition with the specified language.
-*/
+ * Initializes a new class definition with the specified language.
+ */
 - (id)initWithName:(NSString *)className
           language:(ClassDefinitionLanguage)language;
 

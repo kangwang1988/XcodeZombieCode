@@ -17,8 +17,8 @@
 @class XCProject;
 
 /**
-* Represents a file resource in an xcode project.
-*/
+ * Represents a file resource in an xcode project.
+ */
 @interface XCSourceFile : NSObject <XcodeGroupMember, XCBuildFile> {
 
 @private
