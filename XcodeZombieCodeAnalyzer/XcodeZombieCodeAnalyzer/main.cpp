@@ -37,7 +37,7 @@ extern string kKeyInterfSelDictIsInSrcDir;
 string kKeyInterfSelDictNotifCallers = "notifCallers";
 
 json implicitCallStackJson = {
-    //System defined
+    // UICollectionViewLayout
     {"-[UICollectionViewLayout layoutAttributesClass]","+[UICollectionViewLayout alloc]"},
     {"-[UICollectionViewLayout invalidationContextClass]","+[UICollectionViewLayout alloc]"},
     {"-[UICollectionViewLayout prepareLayout]","+[UICollectionViewLayout alloc]"},
@@ -45,10 +45,12 @@ json implicitCallStackJson = {
     {"-[UICollectionViewLayout layoutAttributesForItemAtIndexPath:]","+[UICollectionViewLayout alloc]"},
     {"-[UICollectionViewLayout layoutAttributesForSupplementaryViewOfKind:atIndexPath:]","+[UICollectionViewLayout alloc]"},
     {"-[UICollectionViewLayout layoutAttributesForDecorationViewOfKind:atIndexPath:]","+[UICollectionViewLayout alloc]"},
-    {"-[UICollectionViewLayout shouldInvalidateLayoutForBoundsChange]","+[UICollectionViewLayout alloc]"},
+    {"-[UICollectionViewLayout shouldInvalidateLayoutForBoundsChange:]","+[UICollectionViewLayout alloc]"},
     {"-[UICollectionViewLayout invalidationContextForPreferredLayoutAttributes:withOriginalAttributes:]","+[UICollectionViewLayout alloc]"},
     {"-[UICollectionViewLayout targetContentOffsetForProposedContentOffset:withScrollingVelocity:]","+[UICollectionViewLayout alloc]"},
     {"-[UICollectionViewLayout targetContentOffsetForProposedContentOffset:]","+[UICollectionViewLayout alloc]"},
+    
+    // UIResponder
     {"-[UIResponder targetForAction:withSender:]","+[UIResponder alloc]"},
     {"-[UIResponder canPerformAction:withSender:]","+[UIResponder alloc]"},
     {"-[UIResponder remoteControlReceivedWithEvent:]","+[UIResponder alloc]"},
@@ -70,8 +72,12 @@ json implicitCallStackJson = {
     {"-[UIResponder becomeFirstResponder]","+[UIResponder alloc]"},
     {"-[UIResponder canBecomeFirstResponder]","+[UIResponder alloc]"},
     {"-[UIResponder nextResponder]","+[UIResponder alloc]"},
+    
+    // UILabel
     {"-[UILabel textRectForBounds:limitedToNumberOfLines:]","+[UILabel alloc]"},
     {"-[UILabel drawTextInRect:]","+[UILabel alloc]"},
+    
+    // UITextField
     {"-[UITextField borderRectForBounds:]","+[UITextField alloc]"},
     {"-[UITextField textRectForBounds:]","+[UITextField alloc]"},
     {"-[UITextField placeholderRectForBounds:]","+[UITextField alloc]"},
@@ -81,6 +87,8 @@ json implicitCallStackJson = {
     {"-[UITextField rightViewRectForBounds:]","+[UITextField alloc]"},
     {"-[UITextField drawTextInRect:]","+[UITextField alloc]"},
     {"-[UITextField drawPlaceholderInRect:]","+[UITextField alloc]"},
+    
+    // UIView
     {"-[UIView alignmentRectForFrame:]","+[UIView alloc]"},
     {"-[UIView frameForAlignmentRect:]","+[UIView alloc]"},
     {"-[UIView alignmentRectInsets]","+[UIView alloc]"},
@@ -98,6 +106,9 @@ json implicitCallStackJson = {
     {"-[UIView willMoveToWindow:]","+[UIView alloc]"},
     {"-[UIView didMoveToWindow]","+[UIView alloc]"},
     {"-[UIView layoutSubviews]","+[UIView alloc]"},
+    {"-[UIView requiresConstraintBasedLayout]","+[UIView alloc]"},
+    
+    // UIControl
     {"-[UIControl beginTrackingWithTouch:withEvent:]","+[UIControl alloc]"},
     {"-[UIControl continueTrackingWithTouch:withEvent:]","+[UIControl alloc]"},
     {"-[UIControl endTrackingWithTouch:withEvent:]","+[UIControl alloc]"},
@@ -106,6 +117,8 @@ json implicitCallStackJson = {
     {"-[UIControl setSelected:]","+[UIControl alloc]"},
     {"-[UIControl setSelected:animated:]","+[UIControl alloc]"},
     {"-[UIControl setHighlighted:]","+[UIControl alloc]"},
+    
+    // UIViewController
     {"-[UIControl setHighlighted:animated:]","+[UIControl alloc]"},
     {"-[UIViewController loadView]","+[UIViewController alloc]"},
     {"-[UIViewController loadViewIfNeeded]","+[UIViewController alloc]"},
@@ -138,6 +151,11 @@ json implicitCallStackJson = {
     {"-[UIViewController willAnimateFirstHalfOfRotationToInterfaceOrientation:duration:]","+[UIViewController alloc]"},
     {"-[UIViewController didAnimateFirstHalfOfRotationToInterfaceOrientation:]","+[UIViewController alloc]"},
     {"-[UIViewController willAnimateSecondHalfOfRotationFromInterfaceOrientation:duration:]","+[UIViewController alloc]"},
+    {"-[UIViewController shouldAutomaticallyForwardAppearanceMethods]", "+[UIViewController alloc]"},
+    {"-[UIViewController updateViewConstraints]", "+[UIViewController alloc]"},
+    {"-[UIViewController shouldAutorotateToInterfaceOrientation:]", "+[UIViewController alloc]"},
+    
+    // UITableViewCell
     {"-[UITableViewCell setHighlighted:animated:]","+[UITableViewCell alloc]"},
     {"-[UITableViewCell setSelected:animated:]","+[UITableViewCell alloc]"},
     {"-[UITableViewCell initWithStyle:reuseIdentifier:]","+[UITableViewCell alloc]"},
@@ -146,6 +164,8 @@ json implicitCallStackJson = {
     {"-[UITableViewCell prepareForReuse]","+[UITableViewCell alloc]"},
     {"-[UITableViewCell willTransitionToState:]","+[UITableViewCell alloc]"},
     {"-[UITableViewCell didTransitionToState:]","+[UITableViewCell alloc]"},
+    
+    // NSObject
     {"-[NSObject init]","+[NSObject alloc]"},
     {"-[NSObject copyWithZone]","+[NSObject alloc]"},
     {"-[NSObject dealloc]","+[NSObject alloc]"},
@@ -163,6 +183,21 @@ json implicitCallStackJson = {
     {"-[NSObject dictionaryWithValuesForKeys:]","+[NSObject alloc]"},
     {"+[NSObject load]","+[NSObject alloc]"},
     {"+[NSObject initialize]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityLabel]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityHint]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityValue]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityTraits]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityFrame]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityPath]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityActivationPoint]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityLanguage]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityElementsHidden]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityViewIsModal]","+[NSObject alloc]"},
+    {"+[NSObject shouldGroupAccessibilityChildren]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityNavigationStyle]","+[NSObject alloc]"},
+    {"+[NSObject accessibilityHeaderElements]","+[NSObject alloc]"},
+    
+    // NSOperation
     {"-[NSOperation start]","+[NSOperation alloc]"},
     {"-[NSOperation main]","+[NSOperation alloc]"},
     {"-[NSOperation resume]","+[NSOperation alloc]"},
@@ -170,7 +205,24 @@ json implicitCallStackJson = {
     {"-[NSOperation isCancelled]","+[NSOperation alloc]"},
     {"-[NSOperation isFinished]","+[NSOperation alloc]"},
     {"-[NSOperation isReady]","+[NSOperation alloc]"},
-    {"-[NSOperation isPaused]","+[NSOperation alloc]"}
+    {"-[NSOperation isPaused]","+[NSOperation alloc]"},
+    
+    // SAKDomainObject
+    {"+[SAKDomainObject predicateDictionary]", "+[SAKDomainObject alloc]"},
+    
+    // NSURLProtocol
+    {"+[NSURLProtocol canInitWithRequest:]", "+[NSURLProtocol alloc]"},
+    {"+[NSURLProtocol canonicalRequestForRequest:]", "+[NSURLProtocol alloc]"},
+    {"-[NSURLProtocol startLoading]", "+[NSURLProtocol alloc]"},
+    {"-[NSURLProtocol stopLoading]", "+[NSURLProtocol alloc]"},
+    {"-[NSURLProtocol connection:willSendRequest:redirectResponse:]", "+[NSURLProtocol alloc]"},
+    {"-[NSURLProtocol connection:didReceiveResponse:]", "+[NSURLProtocol alloc]"},
+    {"-[NSURLProtocol connection:didReceiveData:]", "+[NSURLProtocol alloc]"},
+    {"-[NSURLProtocol connectionDidFinishLoading:]", "+[NSURLProtocol alloc]"},
+    {"-[NSURLProtocol connection:didFailWithError:]", "+[NSURLProtocol alloc]"},
+    
+    // Mantle
+    {"+[MTLModel encodingBehaviorsByPropertyKey]", "+[MTLModel alloc]"}
 };
 
 typedef enum{
@@ -751,8 +803,11 @@ int main(int argc,char *argv[]){
     writeJsonToFile(analyzeRepeatCodeOfClsMethodJson(clsMethodJson),folder+"/repeatCode.json");
     string appDelegateAlloc = string("+[")+argv[3]+" alloc]";
     json unusedClsMethodJson = json(clsMethodJson);
-    json usedClsMethodJson = {{appDelegateAlloc,"-[UIApplication main]"},{"-[UIApplication main]","-[UIApplication main]"},
+    json usedClsMethodJson = {
+        {appDelegateAlloc,"-[UIApplication main]"},
+        {"-[UIApplication main]","-[UIApplication main]"},
         {"+[NSObject alloc]","-[UIApplication main]"},
+        {"+[NSURLProtocol alloc]", "-[UIApplication main]"}
     };
     
     bool findAny = false;
